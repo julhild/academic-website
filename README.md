@@ -1,2 +1,2 @@
-# academic-website
+# Academic Website
 Website for a researcher
