@@ -40,7 +40,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-weight: 400;
 }
 
@@ -50,6 +49,35 @@
   padding-right: 1rem;
 }
 
+/* dropdown */
+.dropdown {
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  background-color: #333;
+
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  transform: translateX(-20%);
+  transition: opacity 0.15s ease-out;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  height: auto;
+}
+
+/* side menu */
 .menu-button {
   --menu-speed: 0.75s;
   --side-menu-width: 175px;
