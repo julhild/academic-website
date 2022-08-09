@@ -1,0 +1,96 @@
+{
+    "publications": [
+        {
+            "year": 2022,
+            "articles": [
+                {
+                    "id": "2Y2022",
+                    "imageUrl": "https://s3.amazonaws.com/theoatmeal-img/comics/cats_schrodinger/cats_schrodinger.png",
+                    "authors": [
+                        "Bradley D Hauer", 
+                        "Joshua Combes",
+                        "John D. Teufel"
+                    ],
+                    "tags": [
+                        "Open Source"
+                    ],
+                    "title": "Nonlinear Sideband Cooling to a Schro ̈dinger Cat State of Motion",
+                    "abstract": "The ability to prepare a macroscopic mechanical resonator into a quantum superposition state is an outstand- ing goal of cavity optomechanics. Here we propose a technique to generate Schroedinger cat states of motion using the intrinsic nonlinearity of a dispersive optomechanical interaction. By applying a bichromatic drive to an optomechanical cavity, our protocol enhances the inherent second-order processes of the system, inducing the requisite two-phonon dissipation. We show that this nonlinear sideband cooling technique can dissipatively engineer a mechanical resonator into a Schroedinger cat state, which we verify using the full Hamiltonian and an adiabatically reduced model. While the fidelity of the cat state is maximized in the single-photon, strong- coupling regime, we demonstrate that Wigner negativity persists even for weak coupling. Finally, we show that our cat state generation protocol is robust to significant thermal decoherence of the mechanical mode, indicating that such a procedure may be feasible for near-term experimental systems.",
+                    "journalReference": "arXiv:2208.02371",
+                    "pdfUrl": "https://arxiv.org/pdf/2208.02371.pdf",
+                    "arcticleUrl": "https://arxiv.org/abs/2208.02371",
+                    "date": "2022-08-05"
+                },
+                {
+                    "id": "2Y2022",
+                    "imageUrl": "https://s3.amazonaws.com/theoatmeal-img/comics/cats_schrodinger/cats_schrodinger.png",
+                    "authors": [
+                        "Joshua Foo", 
+                        "Robert B. Mann",
+                        "Magdalena Zych"
+                    ],
+                    "tags": [],
+                    "title": "Schrödinger's Black Hole Cat",
+                    "abstract": "In the absence of a fully-fledged theory of quantum gravity, we propose a \"bottom-up\" framework for exploring quantum-gravitational physics by pairing two of the most fundamental concepts of quantum theory and general relativity, namely quantum superposition and spacetime. We show how to describe such \"spacetime superpositions\" and explore effects they induce upon quantum matter. Our approach capitalizes on standard tools of quantum field theory in curved space, and allows us to calculate physical observables like transition probabilities for a particle detector residing in curvature-superposed de Sitter spacetime, or outside a mass-superposed black hole. Crucially, such scenarios represent genuine quantum superpositions of spacetimes, in contrast with superpositions of metrics which only differ by a coordinate transformation and thus are not different according to general relativity.",
+                    "journalReference": "arXiv:2204.00384",
+                    "pdfUrl": "https://arxiv.org/pdf/2204.00384.pdf",
+                    "arcticleUrl": "https://arxiv.org/abs/2204.00384",
+                    "date": "2022-04-01"
+                }
+            ]
+
+        },
+        {
+            "year": 2021,
+            "articles": [
+                {
+                    "id": "1Y2021",
+                    "imageUrl": "https://www.cell.com/cms/attachment/25f370ed-88c2-4cb8-9360-919ff73d8588/fx1.jpg",
+                    "authors": [
+                        "Martina Cecchetti", 
+                        "Sarah L. Crowley",
+                        "Cecily E.D. Goodwin",
+                        "Robbie A. McDonald"
+                    ],
+                    "title": "Provision of High Meat Content Food and Object Play Reduce Predation of Wild Animals by Domestic Cats Felis catus",
+                    "abstract": "Predation by domestic cats Felis catus can be a threat to biodiversity conservation, but its mitigation is controversial. Confinement and collar-mounted devices can impede cat hunting success and reduce numbers of animals killed,5 but some owners do not wish to inhibit what they see as natural behavior, perceive safety risks associated with collars, or are concerned about device loss and ineffectiveness. In a controlled and replicated trial, we tested novel, non-invasive interventions that aim to make positive contributions to cat husbandry, alongside existing devices that impede hunting. Households where a high meat protein, grain-free food was provided, and households where 5–10 min of daily object play was introduced, recorded decreases of 36% and 25%, respectively, in numbers of animals captured and brought home by cats, relative to controls and the pre-treatment period. Introduction of puzzle feeders increased numbers by 33%. Fitting Birdsbesafe collar covers reduced the numbers of birds captured and brought home by 42% but had no discernible effect on mammals. Cat bells had no discernible effect. Reductions in predation can be made by non-invasive, positive contributions to cat nutrition and behavior that reduce their tendency to hunt, rather than impede their hunting. These measures are likely to find support among cat owners who are concerned about the welfare implications of other interventions.",
+                    "tags": [
+                        "Open Source"
+                    ],
+                    "journalReference": "Current Biology",
+                    "pdfUrl": "https://www.cell.com/action/showPdf?pii=S0960-9822%2820%2931896-0",
+                    "arcticleUrl": "https://www.cell.com/current-biology/fulltext/S0960-9822(20)31896-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982220318960%3Fshowall%3Dtrue#",
+                    "date": "2021-02-11"
+                }
+            ]
+
+        },
+        {
+            "year": 2020,
+            "articles": [
+                {},
+                {},
+                {}
+            ]
+        },
+                {
+            "year": 2014,
+            "articles": [
+                {
+                    "id": "1Y2014",
+                    "imageUrl": "https://i.imgur.com/s7JtV.jpeg",
+                    "authors": [
+                        "M. A. Fardin"
+                    ],
+                    "tags": ["Open Source", "Ignobel Prize"],
+                    "title": "On the rheology of cats",
+                    "abstract": "In this letter I highlight some of the recent developments around the rheology of Felis catus, with potential applications for other species of the felidae family. In the linear rheology regime many factors can enter the determination of the characteristic time of cats: from surface effects to yield stress. In the nonlinear rheology regime flow instabilities can emerge. Nonetheless, the flow rate, which is the usual dimensional control parameter, can be hard to compute because cats are active rheological materials.",
+                    "journalReference": "Rheology Bulletin Vol. 83 No. 2",
+                    "pdfUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
+                    "arcticleUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
+                    "date": "2014-07-09"
+                }
+            ]
+        }
+    ]
+}

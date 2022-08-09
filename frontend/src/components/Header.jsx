@@ -1,4 +1,4 @@
-import { FaAtom } from 'react-icons/fa';
+import { FaCat } from 'react-icons/fa';
 import NavMenu from './NavMenu';
 import "../styles/header.css";
 
@@ -22,8 +22,8 @@ function Header() {
                         </div>
                     </div>
 
-                    <FaAtom className='icon'/>
-                    <h1><span className="text-primary"> Research </span>Group</h1>
+                    <FaCat className='icon'/>
+                    <h1><span className="text-primary"> Cat </span>Science</h1>
                 </div>
 
                 <nav>
