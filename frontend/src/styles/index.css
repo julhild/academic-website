@@ -30,6 +30,10 @@ ul {
   list-style: none;
 }
 
+p {
+  margin: 10px 0;
+}
+
 .text-primary {
   color: var(--green);
 }

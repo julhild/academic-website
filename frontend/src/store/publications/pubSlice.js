@@ -4,10 +4,6 @@ import { errorMessage } from "../utils";
 
 const initialState = {
   publications: [],
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  message: "",
 };
 
 // get publications

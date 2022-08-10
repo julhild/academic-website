@@ -14,16 +14,16 @@
                     "tags": [
                         "Open Source"
                     ],
-                    "title": "Nonlinear Sideband Cooling to a Schro ̈dinger Cat State of Motion",
+                    "title": "Nonlinear Sideband Cooling to a Schrödinger Cat State of Motion",
                     "abstract": "The ability to prepare a macroscopic mechanical resonator into a quantum superposition state is an outstand- ing goal of cavity optomechanics. Here we propose a technique to generate Schroedinger cat states of motion using the intrinsic nonlinearity of a dispersive optomechanical interaction. By applying a bichromatic drive to an optomechanical cavity, our protocol enhances the inherent second-order processes of the system, inducing the requisite two-phonon dissipation. We show that this nonlinear sideband cooling technique can dissipatively engineer a mechanical resonator into a Schroedinger cat state, which we verify using the full Hamiltonian and an adiabatically reduced model. While the fidelity of the cat state is maximized in the single-photon, strong- coupling regime, we demonstrate that Wigner negativity persists even for weak coupling. Finally, we show that our cat state generation protocol is robust to significant thermal decoherence of the mechanical mode, indicating that such a procedure may be feasible for near-term experimental systems.",
                     "journalReference": "arXiv:2208.02371",
                     "pdfUrl": "https://arxiv.org/pdf/2208.02371.pdf",
-                    "arcticleUrl": "https://arxiv.org/abs/2208.02371",
+                    "articleUrl": "https://arxiv.org/abs/2208.02371",
                     "date": "2022-08-05"
                 },
                 {
-                    "id": "2Y2022",
-                    "imageUrl": "https://s3.amazonaws.com/theoatmeal-img/comics/cats_schrodinger/cats_schrodinger.png",
+                    "id": "1Y2022",
+                    "imageUrl": "https://pbs.twimg.com/media/DvrCGpeWkAQdZYN.jpg",
                     "authors": [
                         "Joshua Foo", 
                         "Robert B. Mann",
@@ -34,7 +34,7 @@
                     "abstract": "In the absence of a fully-fledged theory of quantum gravity, we propose a \"bottom-up\" framework for exploring quantum-gravitational physics by pairing two of the most fundamental concepts of quantum theory and general relativity, namely quantum superposition and spacetime. We show how to describe such \"spacetime superpositions\" and explore effects they induce upon quantum matter. Our approach capitalizes on standard tools of quantum field theory in curved space, and allows us to calculate physical observables like transition probabilities for a particle detector residing in curvature-superposed de Sitter spacetime, or outside a mass-superposed black hole. Crucially, such scenarios represent genuine quantum superpositions of spacetimes, in contrast with superpositions of metrics which only differ by a coordinate transformation and thus are not different according to general relativity.",
                     "journalReference": "arXiv:2204.00384",
                     "pdfUrl": "https://arxiv.org/pdf/2204.00384.pdf",
-                    "arcticleUrl": "https://arxiv.org/abs/2204.00384",
+                    "articleUrl": "https://arxiv.org/abs/2204.00384",
                     "date": "2022-04-01"
                 }
             ]
@@ -59,21 +59,13 @@
                     ],
                     "journalReference": "Current Biology",
                     "pdfUrl": "https://www.cell.com/action/showPdf?pii=S0960-9822%2820%2931896-0",
-                    "arcticleUrl": "https://www.cell.com/current-biology/fulltext/S0960-9822(20)31896-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982220318960%3Fshowall%3Dtrue#",
+                    "articleUrl": "https://www.cell.com/current-biology/fulltext/S0960-9822(20)31896-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982220318960%3Fshowall%3Dtrue#",
                     "date": "2021-02-11"
                 }
             ]
 
         },
         {
-            "year": 2020,
-            "articles": [
-                {},
-                {},
-                {}
-            ]
-        },
-                {
             "year": 2014,
             "articles": [
                 {
@@ -87,7 +79,7 @@
                     "abstract": "In this letter I highlight some of the recent developments around the rheology of Felis catus, with potential applications for other species of the felidae family. In the linear rheology regime many factors can enter the determination of the characteristic time of cats: from surface effects to yield stress. In the nonlinear rheology regime flow instabilities can emerge. Nonetheless, the flow rate, which is the usual dimensional control parameter, can be hard to compute because cats are active rheological materials.",
                     "journalReference": "Rheology Bulletin Vol. 83 No. 2",
                     "pdfUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
-                    "arcticleUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
+                    "articleUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
                     "date": "2014-07-09"
                 }
             ]
