@@ -5,7 +5,7 @@ import "../styles/publications.css";
 import { FaBookmark } from "react-icons/fa";
 import PublicationItem from '../components/PublicationItem';
 import ScrollUpButton from '../components/ScrollUpButton';
-
+import Spinner from '../components/Spinner';
 
 function Publications() {
 
@@ -22,7 +22,7 @@ function Publications() {
   }, [dispatch]);
 
   if (!publications) {
-    return <h1>Loading...</h1>
+    return <Spinner/>
   }
 
   return (
