@@ -10,6 +10,7 @@ function App() {
     <>
       <Router>
         <Header />
+        {/* Footer */}
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />

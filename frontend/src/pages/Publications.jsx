@@ -4,6 +4,7 @@ import { getPublications } from "../store/publications/pubSlice";
 import "../styles/publications.css";
 import { FaBookmark } from "react-icons/fa";
 import PublicationItem from '../components/PublicationItem';
+import ScrollUpButton from '../components/ScrollUpButton';
 
 
 function Publications() {
@@ -25,27 +26,30 @@ function Publications() {
   }
 
   return (
-    <div className="publication-page">
-        {/* <div id="google-scholar" class="publication-year">
-          <p>
-              A list of published articles can also be found on
-              
-              <a href="https://scholar.google.com" target="_blank">
-                  <i class="fa-brands fa-google"></i> Scholar</a>
+    <>
+      <ScrollUpButton></ScrollUpButton>
+      <div className="publication-page">
+          {/* <div id="google-scholar" class="publication-year">
+            <p>
+                A list of published articles can also be found on
+                
+                <a href="https://scholar.google.com" target="_blank">
+                    <i class="fa-brands fa-google"></i> Scholar</a>
 
-                profile.
-          </p>
-        </div> */}
-      
-      {publications.map(publicationYear => (
-        <div key={publicationYear.year} className='publication-year'>
-          <h1> <FaBookmark /> {publicationYear.year}</h1>
-          {publicationYear.articles.map(article => (
-            <PublicationItem key={article.id} article={article} />
-          ))}
-        </div>
-      ))}
-    </div>
+                  profile.
+            </p>
+          </div> */}
+        
+        {publications.map(publicationYear => (
+          <div key={publicationYear.year} className='publication-year'>
+            <h1> <FaBookmark /> {publicationYear.year}</h1>
+            {publicationYear.articles.map(article => (
+              <PublicationItem key={article.id} article={article} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 
