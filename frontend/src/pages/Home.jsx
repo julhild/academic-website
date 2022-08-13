@@ -47,11 +47,13 @@ function Home() {
                 
                   {
                     newsItem.imageUrl && 
-                    <img src={newsItem.imageUrl} alt={newsItem.title} />
+                      <div> 
+                        <img src={newsItem.imageUrl} alt={newsItem.title} />
+                      </div>         
                   }
-                  <span>
+                  <p>
                     {newsItem.content}
-                  </span>
+                  </p>
               </div>
 
               {newsItem.links &&
