@@ -1,24 +1,31 @@
 import { Link } from 'react-router-dom';
 import { FaCat, FaCalendarMinus } from 'react-icons/fa';
 import '../styles/news.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNews } from "../store/news/newsSlice";
 import Spinner from '../components/Spinner';
 
-
 function Home() {
-  const { news } = useSelector(state => state.news);
+  const { news, isMoreNews } = useSelector(state => state.news);
+  const [pageNumber, setPageNumber] = useState(1);
+
   const dispatch = useDispatch();
+  // number of listings per page
+  const perPage = 4;
 
   useEffect(() => {
-    dispatch(getNews());
-  }, [dispatch]);
+    dispatch(getNews({perPage, pageNumber}));
+  }, [dispatch, pageNumber]);
 
   const getDate = (stringDate) => {
     const date = new Date(stringDate);
-
     return date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDay() + ', ' + date.getFullYear();
+  }
+
+  const fetchMoreNews = () => {
+    setPageNumber(pageNumber + 1);
+    dispatch(getNews({ perPage, pageNumber}));
   }
 
   if (!news) {
@@ -75,6 +82,12 @@ function Home() {
               }
             </div>
           ))}
+      </div>
+
+      <div className='heading'>
+        {isMoreNews && 
+          <button className='btn' onClick={fetchMoreNews}>Load More</button>
+        }
       </div>
     </>
   )

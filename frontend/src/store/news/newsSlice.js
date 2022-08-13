@@ -4,18 +4,22 @@ import { errorMessage } from "../utils";
 
 const initialState = {
   news: [],
+  isMoreNews: true,
 };
 
 // get publications
-export const getNews = createAsyncThunk("news/getAll", async (thunkAPI) => {
-  try {
-    return await newsService.getAllNews();
-  } catch (error) {
-    const message = errorMessage(error);
+export const getNews = createAsyncThunk(
+  "news/getAll",
+  async ({ perPage, pageNumber }, thunkAPI) => {
+    try {
+      return await newsService.getAllNews(perPage, pageNumber);
+    } catch (error) {
+      const message = errorMessage(error);
 
-    return thunkAPI.rejectWithValue(message);
+      return thunkAPI.rejectWithValue(message);
+    }
   }
-});
+);
 
 export const newsSlice = createSlice({
   name: "news",
@@ -26,7 +30,8 @@ export const newsSlice = createSlice({
         state.news = null;
       })
       .addCase(getNews.fulfilled, (state, action) => {
-        state.news = action.payload;
+        state.news = action.payload.dataToDisplay;
+        state.isMoreNews = action.payload.isMoreNews;
       });
   },
 });

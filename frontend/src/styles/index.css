@@ -151,3 +151,22 @@ p {
   align-items: flex-start;
   justify-items: center;
 }
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+}
+
+.gray-border {
+  border-top: #222 1px solid;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
