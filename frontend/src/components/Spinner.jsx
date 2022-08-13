@@ -3,7 +3,7 @@ import React from 'react'
 function Spinner() {
     return (
         <>
-            <div class="spinner">
+            <div className="spinner">
                 <p className="text-primary">Loading</p>
             </div>
         </>

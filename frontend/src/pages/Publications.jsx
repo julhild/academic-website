@@ -13,10 +13,6 @@ function Publications() {
 
   const dispatch = useDispatch();
 
-  // spinner...
-
-  // button scroll back
-
   useEffect(() => {
     dispatch(getPublications())
   }, [dispatch]);

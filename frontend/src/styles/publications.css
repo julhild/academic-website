@@ -79,12 +79,6 @@ h2 {
   text-align: left;
 }
 
-.publication-info .categories {
-  display: flex;
-  align-items: flex-start;
-  justify-items: center;
-}
-
 .category {
   display: inline-block;
   color: #fff;

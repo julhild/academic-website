@@ -1,4 +1,94 @@
 {
+    "news": [
+        {
+            "id": "1",
+            "title": "AI Fails at Making Adorable Cat Photos",
+            "imageUrl": "https://cdn.mos.cms.futurecdn.net/iP8XqBSJURJ8Zj6eCv7GSQ-1920-80.jpg.webp",
+            "date": "2019-02-14",
+            "content": "When neural networks attempted to create images of cats, the results were cat-astrophic.",
+            "tags": ["Neural networks", "AI"],
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.livescience.com/64771-ai-generated-cats-from-hell.html"
+                },
+                {
+                    "title": "Author",
+                    "url": "https://www.livescience.com/author/mindy-weisberger"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "In the battle of cats vs. rats, the rats are winning",
+            "imageUrl": "",
+            "date": "2018-09-27",
+            "content": "New research finds that contrary to popular opinion, cats are not good predators of rats. The study -- the first to document interactions between feral cats and a wild rat colony -- shows that rats actively avoid cats, and only recorded two rat kills in 79 days. The findings add to growing evidence that any benefit of using cats to control city rats is outweighed by the threat they pose to birds and other urban wildlife.",
+            "tags": ["Urbal wildlife"],
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.sciencedaily.com/releases/2018/09/180927083342.htm"
+                },
+                {
+                    "title": "Journal article",
+                    "url": "https://www.frontiersin.org/articles/10.3389/fevo.2018.00146/full"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Researchers performed whole-genome sequencing of a house cat infected with coronavirus",
+            "imageUrl": "https://www.mdpi.com/viruses/viruses-14-00421/article_deploy/html/images/viruses-14-00421-g002.png",
+            "date": "2022-03-01",
+            "content": "A study has confirmed what is believed to be the first published account of the delta variant of SARS-CoV-2 in a house cat. The viral sequence was a close match to strains circulating in the Philadelphia area at the same time, underscoring the virus's ability to jump from one species to another without acquiring significant mutations.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.sciencedaily.com/releases/2022/03/220301162011.htm"
+                }
+            ]   
+        },
+        {
+            "id": "4",
+            "title": "Internet's Famous Grumpy Cat Dies at Age 7",
+            "imageUrl": "https://cdn.mos.cms.futurecdn.net/5FmFtc974AjN255w6iELLj-1920-80.jpg.webp",
+            "date": "2019-05-17",
+            "content": "In fact, Grumpy Cat's real name was Tardar Sauce, and she wasn't really frowning or grumpy all the time. Instead, her dour expression was caused by a combination of an underbite and feline dwarfism, the latter of which is the result of a genetic mutation that can lead to growth problems and abnormal body proportions.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.livescience.com/65511-grumpy-cat-dies.html"
+                }
+            ]   
+        },
+        {
+            "id": "5",
+            "title": "Schrödinger's cat could be saved, say scientists",
+            "imageUrl": "https://i.guim.co.uk/img/media/b8ed8927f8ba824b2bd730c9d474f2524423186a/0_158_4716_2829/master/4716.jpg?width=620&quality=45&fit=max&dpr=2&s=fa1aae61f5394d9419871d03213fd033",
+            "date": "2019-06-19",
+            "content": "New research casts doubt on idea that a quantum jump is instant and unpredictable.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.theguardian.com/science/2019/jun/03/feline-fine-fate-of-schrodingers-cat-can-be-reversed-study"
+                }
+            ]   
+        },
+        {
+            "id": "6",
+            "title": "Solution to Schrödinger's Cat Problem Proposed in New Paper",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Schrodingers_cat.svg",
+            "date": "2022-05-12",
+            "content": "A paper recently published in the journal Quantum Engineering proposed a solution to a long-standing problem in quantum physics, popularly known as the Schrödinger's Cat problem.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://news.uark.edu/articles/60073/solution-to-schr-dinger-s-cat-problem-proposed-in-new-paper"
+                }
+            ]   
+        }
+    ],
     "publications": [
         {
             "year": 2022,

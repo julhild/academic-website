@@ -145,3 +145,9 @@ p {
     opacity: 10%;
   }
 }
+
+.categories {
+  display: flex;
+  align-items: flex-start;
+  justify-items: center;
+}
