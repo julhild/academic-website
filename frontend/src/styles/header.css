@@ -18,14 +18,25 @@
 
 .navbar-link {
   color: #fff;
-  padding: 10px 10px;
-  margin: 0 5px;
+  margin: 10px;
   text-decoration: none;
-  content: center;
 }
 
-.navbar-link:hover {
-  border-bottom: var(--green) 2px solid;
+li:after {
+  content: "";
+  display: block;
+  margin: auto;
+  padding: 0;
+  height: 2px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.75s ease, background-color 0.75s ease;
+}
+
+li:hover:after {
+  /* border-bottom: var(--green) 2px solid; */
+  width: 100%;
+  background: var(--green);
 }
 
 .current {

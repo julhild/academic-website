@@ -30,6 +30,10 @@ ul {
   list-style: none;
 }
 
+li {
+  text-align: center;
+}
+
 p {
   margin: 10px 0;
 }
