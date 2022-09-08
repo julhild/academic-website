@@ -172,5 +172,42 @@
                 }
             ]
         }
+    ],
+    "research": [
+        {
+            "id": "1",
+            "title": "Schrödinger's cat",
+            "description": "An abstract example of a quantum superposition developed by Nobel prize laureate Erwin Schrödinger to demostrate the quantum principle in the macroscopic world.",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Schr%C3%B6dinger_cat.png",
+            "links": [
+                {
+                    "title": "Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Schrödinger's_cat"
+                },
+                {
+                    "title": "Nobel Prize",
+                    "url": "https://www.scientificamerican.com/article/bringing-schrodingers-quantum-cat-to-life/"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Quantum Cheshire Cat",
+            "description": "This paricular quantum effect can be observed in a quantum system by certain circumstances. The system behaves as if the particles and its properties are spatially separated. In other words, the object can be displaced from its own properties. The name of the effect comes from the book \"Alice in the Wonderland\", in which one of the character Cheshire Cat is able to disappear letting only his smile behind.",
+            "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fncomms5492/MediaObjects/41467_2014_Article_BFncomms5492_Fig1_HTML.jpg?as=webp",
+            "links": [
+                {
+                    "title": "Article",
+                    "url": "https://www.nature.com/articles/ncomms5492"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Research Subject 3",
+            "description": "Description of the research subject 3",
+            "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+            "links": []
+        }
     ]
 }
