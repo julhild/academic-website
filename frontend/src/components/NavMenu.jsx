@@ -1,4 +1,4 @@
-import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaCaretRight } from 'react-icons/fa';
+import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaCaretRight, FaEnvelope } from 'react-icons/fa';
 import NavLink from './NavLink';
 
 function NavMenu() {
@@ -24,6 +24,10 @@ function NavMenu() {
                         <NavLink link={'/teaching'} name={'Winter 2021'} icon={<FaCaretRight />}></NavLink>
                     </li>
                 </ul>
+            </li>
+
+            <li className='navbar-item'>
+                <NavLink link={'/contact'} name={'Contact'} icon={<FaEnvelope />}></NavLink>
             </li>
         </ul>
     )

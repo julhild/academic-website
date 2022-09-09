@@ -34,7 +34,6 @@ li.navbar-item:after {
 }
 
 li.navbar-item:hover:after {
-  /* border-bottom: var(--green) 2px solid; */
   width: 100%;
   background: var(--green);
 }
@@ -61,10 +60,10 @@ li.navbar-item:hover:after {
 }
 
 /* dropdown */
-.dropdown {
+nav .dropdown {
   opacity: 0;
   position: absolute;
-  width: 200px;
+  min-width: 160px;
   z-index: 2;
   background-color: #333;
 
@@ -73,28 +72,23 @@ li.navbar-item:hover:after {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
   transform: translateX(-20%);
   transition: opacity 0.15s ease-out;
 }
 
-.dropdown-item {
+nav .dropdown-item {
   width: 100%;
   padding: 0.5rem;
 }
 
-.has-dropdown:hover .dropdown {
+nav .has-dropdown:hover .dropdown {
   opacity: 1;
   height: auto;
 }
 
 /* side menu */
-.menu-button {
-  --menu-speed: 0.75s;
-  --side-menu-width: 175px;
-  --green: #28a745;
-}
-
 .logo .menu-button {
   width: 0px;
   transition: width 0.4s ease;
@@ -192,9 +186,8 @@ li.navbar-item:hover:after {
 }
 
 .side-menu > div > ul > li {
-  list-style: none;
   padding: 1.5rem 0.5rem;
-  float: right;
+  float: none;
 }
 
 .side-menu > div > ul > li > .navbar-link {
@@ -205,6 +198,32 @@ li.navbar-item:hover:after {
 
 .side-menu > div > ul > li > .navbar-link.current {
   color: var(--green);
+}
+
+/* dropdown in vertical menu */
+.side-menu > div > ul > li > ul.dropdown {
+  opacity: 0;
+  position: relative;
+  width: 175px;
+  background-color: #333;
+  height: 0;
+  flex-direction: column;
+  transform: translateY(20%);
+  transition: opacity 0.15s ease-out;
+}
+
+.side-menu > div > ul > li > ul > li.dropdown-item {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.side-menu > div > ul > li.has-dropdown:hover {
+  border: none;
+}
+
+.side-menu > div > ul > li.has-dropdown:hover .dropdown {
+  opacity: 1;
+  height: auto;
 }
 
 @media (min-width: 1047px) {
