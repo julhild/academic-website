@@ -1,4 +1,4 @@
-import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaCaretRight, FaEnvelope } from 'react-icons/fa';
+import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaCaretRight, FaEnvelope, FaUsers } from 'react-icons/fa';
 import NavLink from './NavLink';
 
 function NavMenu() {
@@ -12,6 +12,10 @@ function NavMenu() {
             </li>
             <li className='navbar-item'>
                 <NavLink link={'/publications'} name={'Publications'} icon={<FaNewspaper />}></NavLink>
+            </li>
+
+            <li className='navbar-item'>
+                <NavLink link={'/group-members'} name={'Group Members'} icon={<FaUsers />}></NavLink>
             </li>
 
             <li className='navbar-item has-dropdown'>

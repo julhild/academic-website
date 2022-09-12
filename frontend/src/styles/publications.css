@@ -13,15 +13,6 @@ sub {
   text-align: center;
 }
 
-.publication-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem auto 5rem auto;
-  padding-bottom: 1rem;
-  border-bottom: var(--green) 1px solid;
-}
-
 .publication-year {
   display: flex;
   flex-direction: column;

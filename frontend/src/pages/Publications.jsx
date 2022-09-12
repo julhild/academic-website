@@ -24,7 +24,7 @@ function Publications() {
   return (
     <>
       <ScrollUpButton></ScrollUpButton>
-      <div className="publication-page">
+      <div className="flex-column">
           {/* <div id="google-scholar" class="publication-year">
             <p>
                 A list of published articles can also be found on

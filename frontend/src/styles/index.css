@@ -53,6 +53,41 @@ p {
   text-align: center;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto 5rem auto;
+  padding-bottom: 1rem;
+  border-bottom: var(--green) 1px solid;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 20h;
+  background-color: var(--light-blue-background);
+  padding: 20px;
+}
+
+.page-header h1 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--green);
+}
+
+.page-header p {
+  font-size: 20px;
+  margin: 20px 0 30px;
+}
+
+.page-header a {
+  color: var(--green);
+}
+
 .scroll-up-button {
   display: block;
   position: fixed;
