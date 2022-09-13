@@ -218,6 +218,7 @@
             "name": "Dr. Kristyn Vitale",
             "location": "Unity College",
             "website": "https://maueyes.com",
+            "instagram": "https://www.instagram.com/maueyes/?hl=en",
             "linkin": "https://www.linkedin.com/in/kristynvitale/",
             "youtube": "https://www.youtube.com/c/catscipodcast",
             "researchGate": "https://www.researchgate.net/profile/Kristyn-Vitale",
@@ -245,10 +246,9 @@
             "location": "10 Downing Street",
             "wikipedia": "https://en.wikipedia.org/wiki/Chief_Mouser_to_the_Cabinet_Office",
             "website": "https://www.gov.uk/government/history/10-downing-street#larry-chief-mouser",
-            "linkin": "",
+            "linkin": "https://www.linkedin.com/in/larry-the-cat-a105202b/?originalSubdomain=uk",
             "twitter": "https://twitter.com/Number10cat",
-            "github": "",
-            "researchGate": "",
+            "instagram": "https://www.instagram.com/larrythecatatnumber10/?hl=en",
             "research": [
                 "Official resident cat at the exercutive office of the prime minister of the United Kingdom", 
                 "Keeping the office of the prime minister rat free",
@@ -268,11 +268,12 @@
             "photoUrl": "https://thecinemaholic.com/wp-content/uploads/2022/08/cat-cg.jpg",
             "name": "Herman the Cat",
             "location": "deceased",
-            "wikipedia": "",
+            "wikipedia": "https://en.wikipedia.org/wiki/Ship%27s_cat",
             "website": "https://thecinemaholic.com/was-there-really-a-cat-named-herman-in-the-us-coast-guard/",
             "research": [
                 "Control the rodent population aboard ships", 
-                "Member of the armed forces"
+                "Member of the armed forces",
+                "Providing with the sense of coziness, sweetness and pawesomeness"
             ],
             "cv": [
                 {
@@ -291,6 +292,7 @@
             "website": "https://www.vet.cornell.edu/research/faculty/bruce-kornreich-dvm-phd",
             "linkin": "https://www.linkedin.com/in/bruce-kornreich-494a6b79",
             "researchGate": "https://www.researchgate.net/profile/Bruce-Kornreich",
+            "instagram": "https://www.instagram.com/cornellvet/?hl=en",
             "research": [
                 "Feline physiology", 
                 "Veterinary Internal Medicine (Cardiology)",

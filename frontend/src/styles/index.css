@@ -38,6 +38,11 @@ p {
   color: var(--green);
 }
 
+.dark-blue {
+  color: var(--dark-blue);
+  margin: 0;
+}
+
 .link {
   color: var(--dark-grey);
   text-decoration: none;

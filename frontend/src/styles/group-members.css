@@ -1,155 +1,93 @@
 .member-category {
   background-color: var(--green);
   color: #fff;
-  padding: 0.5rem;
-  /* margin-bottom: 0.5rem; */
+  padding: 0.5rem 1rem;
+  text-align: left;
 }
 
 .group-member-record {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top: var(--green) 1px solid;
   padding: 1rem;
-  gap: 2rem;
-}
-
-.group-member-record > img {
-  max-width: 200px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  gap: 1rem;
 }
 
 .group-member-info {
-  width: 100%;
-}
-
-.contact {
-  display: grid;
-  grid-template-columns: 25rem auto;
-  grid-template-areas:
-    "header header"
-    "contact social";
+  display: flex;
+  justify-contect: center;
+  align-items: center;
+  gap: 3rem;
   padding-bottom: 1rem;
 }
 
-.group-member-info h4 {
-  grid-area: header;
-  background-color: var(--green);
-  color: #fff;
-  text-align: left;
-  font-size: 1rem;
-}
-
-.contact-info {
+.contact {
   grid-area: contact;
+  text-align: left;
+  align-self: center;
+  height: 100px;
 }
 
 .social {
   grid-area: social;
+  height: 100px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-items: flex-start;
+  gap: 0.5rem;
 }
 
-.social i {
+.social-link {
   font-size: 1.8rem;
-}
-
-.social a {
-  color: #666;
-}
-
-.social a:hover {
-  border: none;
   color: var(--dark-blue);
+}
+
+.social-link:hover {
+  font-size: 1.9rem;
+}
+
+.website-link {
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.website-link:hover {
+  font-size: 1.05rem;
 }
 
 .group-member-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 2rem;
 }
 
-.research-button:hover {
-  background-color: var(--dark-blue);
-}
-
-.dropdown-area {
+.expand-area {
   font-size: 0.9rem;
   overflow: hidden;
   margin-top: 1rem;
 }
 
-.research {
-  padding: 0;
-  padding-top: 1.5rem;
-  height: 0;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.cv {
-  height: 0;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.research-checkbox {
-  position: absolute;
-  z-index: 2;
-  cursor: pointer;
-  width: 7rem;
-  height: 1.8rem;
-  opacity: 0;
-}
-
-.research-button {
-  position: absolute;
+.expand-button {
   text-align: center;
-  width: 7rem;
-  padding: 0.25rem;
+  padding: 0.3rem 0.5rem;
   z-index: 1;
   color: #fff;
+  background-color: #777;
   border-radius: 5px;
-  background-color: #666;
-}
-
-.cv-checkbox {
-  position: absolute;
-  z-index: 2;
+  border: none;
+  font-size: 1rem;
   cursor: pointer;
-  width: 11rem;
-  height: 1.8rem;
-  opacity: 0;
 }
 
-.cv-button {
-  position: absolute;
-  text-align: center;
-  width: 11rem;
-  padding: 0.25rem;
-  z-index: 1;
-  color: #fff;
-  border-radius: 5px;
-  background-color: #666;
-}
-
-input.research-checkbox:hover ~ .research-button,
-input.research-checkbox:checked ~ .research-button,
-input.cv-checkbox:checked ~ .cv-button,
-input.cv-checkbox:hover ~ .cv-button {
+.expand-active {
   background-color: var(--dark-blue);
 }
 
-input.research-checkbox:checked ~ .research {
-  height: 100%;
-  opacity: 1;
-  padding: 1.5rem 0.5rem 1rem;
-}
-
-input.cv-checkbox:checked ~ .cv {
+.expand-area {
   height: 100%;
   opacity: 1;
   padding: 1.5rem 0.5rem 1rem;
@@ -177,22 +115,22 @@ table.cv-table td.year {
   font-size: 0.9rem;
 }
 
-@media (max-width: 840px) {
-  .contact {
-    display: flex;
+@media (max-width: 600px) {
+  .group-member-info {
+    width: 100%;
     flex-direction: column;
-    justify-items: center;
-    align-items: flex-start;
+  }
+
+  .contact {
+    text-align: center;
   }
 
   .social {
-    display: grid;
-    grid-template-columns: repeat(2, 10rem [col-start]);
+    justify-content: center;
   }
-}
 
-@media (max-width: 585px) {
-  .group-member-record {
+  .group-member-buttons {
     flex-direction: column;
+    gap: 1rem;
   }
 }

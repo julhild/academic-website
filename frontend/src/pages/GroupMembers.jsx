@@ -1,10 +1,10 @@
-import { FaGraduationCap, FaLandmark, FaPaw, FaUser, FaWikipediaW } from 'react-icons/fa';
+import { FaGraduationCap, FaPaw } from 'react-icons/fa';
 import "../styles/group-members.css";
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGroupMembers } from "../store/people/peopleSlice";
 import Spinner from '../components/Spinner';
+import GroupMember from '../components/GroupMember';
 
 
 function GroupMembers() {
@@ -28,42 +28,21 @@ function GroupMembers() {
         <p>Current and former members of the cat group</p>
       </div>
       <div className="flex-column">
+
         <div className="member-category">
           <FaGraduationCap/> Researchers
         </div>
         {groupMembers.filter(el => el.category === "researcher").map(person => (
-          <div key={person.id} className='group-member-record'>
-            <img src={person.photoUrl} alt={person.name} />
-            <div className="group-member-info">
-              <div className="contact">
-                <h3>{person.name}</h3>
-
-                <div className="contact-info">
-                  <p>
-                    <FaLandmark className="dark-blue"/> {person.location}
-                  </p>
-                  {
-                    person.website &&
-                    <p>
-                      <FaUser/> Website: {person.website}
-                    </p>
-                  }
-
-                  <div className="social">
-                    {person.wikipedia && 
-                    <Link to=""> <FaWikipediaW/> </Link>}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <GroupMember  key={person.id} groupMember={person} />
         ))}
 
         <div className="member-category">
           <FaPaw/> Remarkable Cats
         </div>
 
-        {/* Here come amazing cats */}
+        {groupMembers.filter(el => el.category === "remarkable cat").map(person => (
+          <GroupMember  key={person.id} groupMember={person} />
+        ))}
         
 
       </div>
