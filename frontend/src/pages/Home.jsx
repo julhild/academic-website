@@ -23,7 +23,8 @@ function Home() {
     return date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDay() + ', ' + date.getFullYear();
   }
 
-  const fetchMoreNews = () => {
+  const fetchMoreNews = (e) => {
+    e.preventDefault();
     setPageNumber(pageNumber + 1);
     dispatch(getNews({ perPage, pageNumber}));
   }

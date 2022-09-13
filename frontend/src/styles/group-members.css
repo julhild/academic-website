@@ -5,34 +5,24 @@
   text-align: left;
 }
 
-.group-member-record {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-top: var(--green) 1px solid;
-  padding: 1rem;
-  gap: 1rem;
-}
-
 .group-member-info {
   display: flex;
-  justify-contect: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 3rem;
-  padding-bottom: 1rem;
+  padding: 2rem;
+  border-top: var(--green) 1px solid;
 }
 
 .contact {
   grid-area: contact;
   text-align: left;
   align-self: center;
-  height: 100px;
+  min-width: 200px;
 }
 
 .social {
   grid-area: social;
-  height: 100px;
   display: flex;
   flex-direction: row;
   justify-items: flex-start;
@@ -60,15 +50,10 @@
 .group-member-buttons {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.expand-area {
-  font-size: 0.9rem;
-  overflow: hidden;
-  margin-top: 1rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .expand-button {
@@ -83,14 +68,21 @@
   cursor: pointer;
 }
 
+.expand-button:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
 .expand-active {
   background-color: var(--dark-blue);
 }
 
 .expand-area {
-  height: 100%;
-  opacity: 1;
-  padding: 1.5rem 0.5rem 1rem;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-align: left;
+  max-width: 400px;
+  padding: 1rem 0;
 }
 
 table .cv-table {
@@ -113,12 +105,39 @@ table.cv-table td.year {
   padding-right: 1rem;
   text-align: right;
   font-size: 0.9rem;
+  width: 8rem;
+}
+
+@media (max-width: 980px) {
+  .group-member-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "photo contact"
+      "expand expand";
+    row-gap: 0;
+  }
+
+  .expand {
+    grid-area: expand;
+    justify-self: center;
+  }
+
+  .expand-area {
+    width: 400px;
+  }
 }
 
 @media (max-width: 600px) {
   .group-member-info {
     width: 100%;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-top: var(--green) 1px solid;
   }
 
   .contact {
@@ -130,7 +149,13 @@ table.cv-table td.year {
   }
 
   .group-member-buttons {
-    flex-direction: column;
-    gap: 1rem;
+    margin-top: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .expand-area {
+    width: 300px;
   }
 }
