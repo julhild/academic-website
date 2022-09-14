@@ -6,22 +6,25 @@ import Publications from "./pages/Publications";
 import Teaching from "./pages/Teaching";
 import Contact from "./pages/Contact";
 import GroupMembers from "./pages/GroupMembers";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <Router>
         <Header />
-        {/* Footer */}
         <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/publications" element={<Publications />} />
-            <Route path="/group-members" element={<GroupMembers />} />
-            <Route path="/teaching" element={<Teaching />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <div className="page-container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/publications" element={<Publications />} />
+              <Route path="/group-members" element={<GroupMembers />} />
+              <Route path="/teaching" element={<Teaching />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
       </Router>
     </>

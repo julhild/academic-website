@@ -9,6 +9,7 @@
   --light-blue-background: #e5f2fa;
 
   --header-height: 70px;
+  --footer-height: 85px;
   --max-width: 1100px;
   --menu-speed: 0.75s;
   --side-menu-width: 175px;
@@ -49,10 +50,15 @@ p {
 }
 
 .container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-container {
   width: 100%;
   max-width: var(--max-width);
-  margin: var(--header-height) auto 0;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: var(--header-height) 2rem;
   overflow: hidden;
   background-color: var(--light-blue-background);
   text-align: center;
@@ -62,9 +68,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem auto 5rem auto;
-  padding-bottom: 1rem;
-  border-bottom: var(--green) 1px solid;
+  margin: 1rem auto 2rem auto;
 }
 
 .page-header {
@@ -96,8 +100,8 @@ p {
 .scroll-up-button {
   display: block;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: var(--footer-height);
+  right: 20px;
   z-index: 99;
   font-size: 1.5rem;
   border: none;
@@ -209,4 +213,25 @@ p {
 .btn:hover {
   opacity: 0.9;
   transform: scale(0.98);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0.286em 0.571em 0 rgba(0, 0, 0, 0.2);
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: var(--green);
+  border-radius: 50%;
 }
