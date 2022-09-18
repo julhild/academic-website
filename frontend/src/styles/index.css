@@ -3,6 +3,7 @@
 :root {
   --green: #28a745;
   --middle-green: #27893a;
+  --light-green: #e9f6ec;
   --blue: #0284d0;
   --dark-blue: #1d6695;
   --dark-grey: #333;
@@ -77,8 +78,6 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 20h;
-  background-color: var(--light-blue-background);
   padding: 20px;
 }
 
@@ -91,10 +90,6 @@ p {
 .page-header p {
   font-size: 20px;
   margin: 20px 0 30px;
-}
-
-.page-header a {
-  color: var(--green);
 }
 
 .scroll-up-button {
@@ -204,6 +199,7 @@ p {
   background-color: #28a745;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .gray-border {

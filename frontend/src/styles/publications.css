@@ -20,8 +20,7 @@ sub {
   justify-content: center;
 }
 
-.publication-year > h1,
-h2 {
+.publication-year > h1 {
   margin: 1rem;
   padding-top: 1rem;
   line-height: 1.3;
@@ -32,17 +31,13 @@ h2 {
   font-size: 1.5rem;
 }
 
-.publication-year > h2 {
-  font-size: 1.2rem;
-}
-
 .publication-year .publication-item {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 1rem;
   padding: 1.5rem;
   gap: 1.5rem;
-  background-color: #e9f6ec;
+  background-color: var(--light-green);
   border-radius: 10px;
   border: solid var(--green) 2px;
 }
