@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 import { FaSearchLocation, FaMapSigns, FaEnvelopeOpenText } from "react-icons/fa";
 import "../styles/contact.css";
 
@@ -9,16 +10,29 @@ function Contact() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE,
-      process.env.REACT_APP_EMAILJS_TEMPLATE,
-      contactForm.current,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    const nameValue = contactForm.current.name.value;
+    const emailValue = contactForm.current.email.value;
+    const messageValue = contactForm.current.message.value
+
+    if (nameValue.trim() === "") {
+      toast.error("Please write your name.");
+    } else if (emailValue.trim() === "") {
+      toast.error('Please write an email where we can contact.')
+    } else if (messageValue.trim() === "") {
+      toast.error('Please write a message.')
+    } else {
+      emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE,
+        process.env.REACT_APP_EMAILJS_TEMPLATE,
+        contactForm.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+        .then(() => {
+          toast.success('Your message was successfully sent!');
+          contactForm.current.reset();
+        }, (error) => {
+          toast.error("Something went wrong: " + error.text);
+        });
+    }
   }
 
   return (
@@ -45,7 +59,7 @@ function Contact() {
           <input
             className="formInput"
             placeholder="Your email"
-            type="text"
+            type="email"
             name="email"
             id="email"
           />

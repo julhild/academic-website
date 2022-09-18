@@ -74,6 +74,11 @@
   x-overflow: auto;
 }
 
+textarea,
+textarea::placeholder {
+  font-family: Arial;
+}
+
 @media (max-width: 850px) {
   .contact-page {
     grid-template-columns: 1fr;
