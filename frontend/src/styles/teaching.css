@@ -1,0 +1,49 @@
+.lectures-list {
+  margin-bottom: 2rem;
+}
+
+.lecture-record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.lecture-record-link {
+  display: contents;
+}
+
+.lecture-record-image {
+  height: 200px;
+  min-width: 300px;
+  max-width: 30%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+.lecture-record-details {
+  width: 60%;
+  text-align: left;
+}
+
+.lecture-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  margin: 0;
+}
+
+.institution {
+  color: var(--middle-green);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.lecture-description {
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+}
