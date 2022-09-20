@@ -1,0 +1,358 @@
+{
+    "news": [
+        {
+            "id": "1",
+            "title": "AI Fails at Making Adorable Cat Photos",
+            "imageUrl": "https://cdn.mos.cms.futurecdn.net/iP8XqBSJURJ8Zj6eCv7GSQ-1920-80.jpg.webp",
+            "date": "2019-02-14",
+            "content": "When neural networks attempted to create images of cats, the results were cat-astrophic.",
+            "tags": ["Neural networks", "AI"],
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.livescience.com/64771-ai-generated-cats-from-hell.html"
+                },
+                {
+                    "title": "Author",
+                    "url": "https://www.livescience.com/author/mindy-weisberger"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "In the battle of cats vs. rats, the rats are winning",
+            "imageUrl": "",
+            "date": "2018-09-27",
+            "content": "New research finds that contrary to popular opinion, cats are not good predators of rats. The study -- the first to document interactions between feral cats and a wild rat colony -- shows that rats actively avoid cats, and only recorded two rat kills in 79 days. The findings add to growing evidence that any benefit of using cats to control city rats is outweighed by the threat they pose to birds and other urban wildlife.",
+            "tags": ["Urbal wildlife"],
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.sciencedaily.com/releases/2018/09/180927083342.htm"
+                },
+                {
+                    "title": "Journal article",
+                    "url": "https://www.frontiersin.org/articles/10.3389/fevo.2018.00146/full"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Researchers performed whole-genome sequencing of a house cat infected with coronavirus",
+            "imageUrl": "https://www.mdpi.com/viruses/viruses-14-00421/article_deploy/html/images/viruses-14-00421-g002.png",
+            "date": "2022-03-01",
+            "content": "A study has confirmed what is believed to be the first published account of the delta variant of SARS-CoV-2 in a house cat. The viral sequence was a close match to strains circulating in the Philadelphia area at the same time, underscoring the virus's ability to jump from one species to another without acquiring significant mutations.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.sciencedaily.com/releases/2022/03/220301162011.htm"
+                }
+            ]   
+        },
+        {
+            "id": "4",
+            "title": "Internet's Famous Grumpy Cat Dies at Age 7",
+            "imageUrl": "https://cdn.mos.cms.futurecdn.net/5FmFtc974AjN255w6iELLj-1920-80.jpg.webp",
+            "date": "2019-05-17",
+            "content": "In fact, Grumpy Cat's real name was Tardar Sauce, and she wasn't really frowning or grumpy all the time. Instead, her dour expression was caused by a combination of an underbite and feline dwarfism, the latter of which is the result of a genetic mutation that can lead to growth problems and abnormal body proportions.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.livescience.com/65511-grumpy-cat-dies.html"
+                }
+            ]   
+        },
+        {
+            "id": "5",
+            "title": "Schrödinger's cat could be saved, say scientists",
+            "imageUrl": "https://i.guim.co.uk/img/media/b8ed8927f8ba824b2bd730c9d474f2524423186a/0_158_4716_2829/master/4716.jpg?width=620&quality=45&fit=max&dpr=2&s=fa1aae61f5394d9419871d03213fd033",
+            "date": "2019-06-19",
+            "content": "New research casts doubt on idea that a quantum jump is instant and unpredictable.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://www.theguardian.com/science/2019/jun/03/feline-fine-fate-of-schrodingers-cat-can-be-reversed-study"
+                }
+            ]   
+        },
+        {
+            "id": "6",
+            "title": "Solution to Schrödinger's Cat Problem Proposed in New Paper",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Schrodingers_cat.svg",
+            "date": "2022-05-12",
+            "content": "A paper recently published in the journal Quantum Engineering proposed a solution to a long-standing problem in quantum physics, popularly known as the Schrödinger's Cat problem.",
+            "links": [
+                {
+                    "title": "Source",
+                    "url": "https://news.uark.edu/articles/60073/solution-to-schr-dinger-s-cat-problem-proposed-in-new-paper"
+                }
+            ]   
+        }
+    ],
+    "publications": [
+        {
+            "year": 2022,
+            "articles": [
+                {
+                    "id": "2Y2022",
+                    "imageUrl": "https://s3.amazonaws.com/theoatmeal-img/comics/cats_schrodinger/cats_schrodinger.png",
+                    "authors": [
+                        "Bradley D Hauer", 
+                        "Joshua Combes",
+                        "John D. Teufel"
+                    ],
+                    "tags": [
+                        "Open Source"
+                    ],
+                    "title": "Nonlinear Sideband Cooling to a Schrödinger Cat State of Motion",
+                    "abstract": "The ability to prepare a macroscopic mechanical resonator into a quantum superposition state is an outstand- ing goal of cavity optomechanics. Here we propose a technique to generate Schroedinger cat states of motion using the intrinsic nonlinearity of a dispersive optomechanical interaction. By applying a bichromatic drive to an optomechanical cavity, our protocol enhances the inherent second-order processes of the system, inducing the requisite two-phonon dissipation. We show that this nonlinear sideband cooling technique can dissipatively engineer a mechanical resonator into a Schroedinger cat state, which we verify using the full Hamiltonian and an adiabatically reduced model. While the fidelity of the cat state is maximized in the single-photon, strong- coupling regime, we demonstrate that Wigner negativity persists even for weak coupling. Finally, we show that our cat state generation protocol is robust to significant thermal decoherence of the mechanical mode, indicating that such a procedure may be feasible for near-term experimental systems.",
+                    "journalReference": "arXiv:2208.02371",
+                    "pdfUrl": "https://arxiv.org/pdf/2208.02371.pdf",
+                    "articleUrl": "https://arxiv.org/abs/2208.02371",
+                    "date": "2022-08-05"
+                },
+                {
+                    "id": "1Y2022",
+                    "imageUrl": "https://pbs.twimg.com/media/DvrCGpeWkAQdZYN.jpg",
+                    "authors": [
+                        "Joshua Foo", 
+                        "Robert B. Mann",
+                        "Magdalena Zych"
+                    ],
+                    "tags": [],
+                    "title": "Schrödinger's Black Hole Cat",
+                    "abstract": "In the absence of a fully-fledged theory of quantum gravity, we propose a \"bottom-up\" framework for exploring quantum-gravitational physics by pairing two of the most fundamental concepts of quantum theory and general relativity, namely quantum superposition and spacetime. We show how to describe such \"spacetime superpositions\" and explore effects they induce upon quantum matter. Our approach capitalizes on standard tools of quantum field theory in curved space, and allows us to calculate physical observables like transition probabilities for a particle detector residing in curvature-superposed de Sitter spacetime, or outside a mass-superposed black hole. Crucially, such scenarios represent genuine quantum superpositions of spacetimes, in contrast with superpositions of metrics which only differ by a coordinate transformation and thus are not different according to general relativity.",
+                    "journalReference": "arXiv:2204.00384",
+                    "pdfUrl": "https://arxiv.org/pdf/2204.00384.pdf",
+                    "articleUrl": "https://arxiv.org/abs/2204.00384",
+                    "date": "2022-04-01"
+                }
+            ]
+        },
+        {
+            "year": 2021,
+            "articles": [
+                {
+                    "id": "1Y2021",
+                    "imageUrl": "https://www.cell.com/cms/attachment/25f370ed-88c2-4cb8-9360-919ff73d8588/fx1.jpg",
+                    "authors": [
+                        "Martina Cecchetti", 
+                        "Sarah L. Crowley",
+                        "Cecily E.D. Goodwin",
+                        "Robbie A. McDonald"
+                    ],
+                    "title": "Provision of High Meat Content Food and Object Play Reduce Predation of Wild Animals by Domestic Cats Felis catus",
+                    "abstract": "Predation by domestic cats Felis catus can be a threat to biodiversity conservation, but its mitigation is controversial. Confinement and collar-mounted devices can impede cat hunting success and reduce numbers of animals killed,5 but some owners do not wish to inhibit what they see as natural behavior, perceive safety risks associated with collars, or are concerned about device loss and ineffectiveness. In a controlled and replicated trial, we tested novel, non-invasive interventions that aim to make positive contributions to cat husbandry, alongside existing devices that impede hunting. Households where a high meat protein, grain-free food was provided, and households where 5–10 min of daily object play was introduced, recorded decreases of 36% and 25%, respectively, in numbers of animals captured and brought home by cats, relative to controls and the pre-treatment period. Introduction of puzzle feeders increased numbers by 33%. Fitting Birdsbesafe collar covers reduced the numbers of birds captured and brought home by 42% but had no discernible effect on mammals. Cat bells had no discernible effect. Reductions in predation can be made by non-invasive, positive contributions to cat nutrition and behavior that reduce their tendency to hunt, rather than impede their hunting. These measures are likely to find support among cat owners who are concerned about the welfare implications of other interventions.",
+                    "tags": [
+                        "Open Source"
+                    ],
+                    "journalReference": "Current Biology",
+                    "pdfUrl": "https://www.cell.com/action/showPdf?pii=S0960-9822%2820%2931896-0",
+                    "articleUrl": "https://www.cell.com/current-biology/fulltext/S0960-9822(20)31896-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982220318960%3Fshowall%3Dtrue#",
+                    "date": "2021-02-11"
+                }
+            ]
+        },
+        {
+            "year": 2014,
+            "articles": [
+                {
+                    "id": "1Y2014",
+                    "imageUrl": "https://i.imgur.com/s7JtV.jpeg",
+                    "authors": [
+                        "M. A. Fardin"
+                    ],
+                    "tags": ["Open Source", "Ignobel Prize"],
+                    "title": "On the rheology of cats",
+                    "abstract": "In this letter I highlight some of the recent developments around the rheology of Felis catus, with potential applications for other species of the felidae family. In the linear rheology regime many factors can enter the determination of the characteristic time of cats: from surface effects to yield stress. In the nonlinear rheology regime flow instabilities can emerge. Nonetheless, the flow rate, which is the usual dimensional control parameter, can be hard to compute because cats are active rheological materials.",
+                    "journalReference": "Rheology Bulletin Vol. 83 No. 2",
+                    "pdfUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
+                    "articleUrl": "https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf",
+                    "date": "2014-07-09"
+                }
+            ]
+        }
+    ],
+    "research": [
+        {
+            "id": "1",
+            "title": "Schrödinger's cat",
+            "description": "An abstract example of a quantum superposition developed by Nobel prize laureate Erwin Schrödinger to demostrate the quantum principle in the macroscopic world.",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Schr%C3%B6dinger_cat.png",
+            "links": [
+                {
+                    "title": "Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Schrödinger's_cat"
+                },
+                {
+                    "title": "Nobel Prize",
+                    "url": "https://www.scientificamerican.com/article/bringing-schrodingers-quantum-cat-to-life/"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Quantum Cheshire Cat",
+            "description": "This paricular quantum effect can be observed in a quantum system by certain circumstances. The system behaves as if the particles and its properties are spatially separated. In other words, the object can be displaced from its own properties. The name of the effect comes from the book \"Alice in the Wonderland\", in which one of the character Cheshire Cat is able to disappear letting only his smile behind.",
+            "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fncomms5492/MediaObjects/41467_2014_Article_BFncomms5492_Fig1_HTML.jpg?as=webp",
+            "links": [
+                {
+                    "title": "Article",
+                    "url": "https://www.nature.com/articles/ncomms5492"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Research Subject 3",
+            "description": "Description of the research subject 3",
+            "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+            "links": []
+        }
+    ],
+    "people": [
+        {
+            "id": "1",
+            "category": "researcher",
+            "photoUrl": "https://simanaitissays.files.wordpress.com/2019/05/vitalecat.gif",
+            "name": "Dr. Kristyn Vitale",
+            "location": "Unity College",
+            "website": "https://maueyes.com",
+            "instagram": "https://www.instagram.com/maueyes/?hl=en",
+            "linkin": "https://www.linkedin.com/in/kristynvitale/",
+            "youtube": "https://www.youtube.com/c/catscipodcast",
+            "researchGate": "https://www.researchgate.net/profile/Kristyn-Vitale",
+            "research": [
+                "Experimental Psychology & Animal Behaviour" , "Human-Animal Bond" , "Behaviour Ecology"
+            ],
+            "cv": [
+                {
+                    "duration": "2020 - present",
+                    "institution": "Unity College",
+                    "description": "Assistant Professor"
+                },
+                {
+                    "duration": "2014 - 2020",
+                    "institution": "Oregon State University",
+                    "description": "Fellow, Postdoc"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "category": "remarkable cat",
+            "photoUrl": "https://ichef.bbci.co.uk/news/976/cpsprodpb/9AAB/production/_90359593_larrythecat.jpg",
+            "name": "Larry",
+            "location": "10 Downing Street",
+            "wikipedia": "https://en.wikipedia.org/wiki/Chief_Mouser_to_the_Cabinet_Office",
+            "website": "https://www.gov.uk/government/history/10-downing-street#larry-chief-mouser",
+            "linkin": "https://www.linkedin.com/in/larry-the-cat-a105202b/?originalSubdomain=uk",
+            "twitter": "https://twitter.com/Number10cat",
+            "instagram": "https://www.instagram.com/larrythecatatnumber10/?hl=en",
+            "research": [
+                "Official resident cat at the exercutive office of the prime minister of the United Kingdom", 
+                "Keeping the office of the prime minister rat free",
+                "Predict outcomes of the soccer matches"
+            ],
+            "cv": [
+                {
+                    "duration": "2011 - current",
+                    "institution": "Government of the United Kingdom, Office of the Prime Minister",
+                    "description": "Chief Mouser to the Cabinet Office"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "category": "remarkable cat",
+            "photoUrl": "https://thecinemaholic.com/wp-content/uploads/2022/08/cat-cg.jpg",
+            "name": "Herman the Cat",
+            "location": "deceased",
+            "wikipedia": "https://en.wikipedia.org/wiki/Ship%27s_cat",
+            "website": "https://thecinemaholic.com/was-there-really-a-cat-named-herman-in-the-us-coast-guard/",
+            "research": [
+                "Control the rodent population aboard ships", 
+                "Member of the armed forces",
+                "Providing with the sense of coziness, sweetness and pawesomeness"
+            ],
+            "cv": [
+                {
+                    "duration": "1943 - unknown",
+                    "institution": "United States Cost Guard",
+                    "description": "Expert Mouser"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "category": "researcher",
+            "photoUrl": "https://alumni.cornell.edu/cornellians/wp-content/uploads/sites/2/2022/03/UP_2016_0622_023-819x1024.jpg",
+            "name": "Dr. Bruce Kornreich",
+            "location": "Feline Health Center",
+            "website": "https://www.vet.cornell.edu/research/faculty/bruce-kornreich-dvm-phd",
+            "linkin": "https://www.linkedin.com/in/bruce-kornreich-494a6b79",
+            "researchGate": "https://www.researchgate.net/profile/Bruce-Kornreich",
+            "instagram": "https://www.instagram.com/cornellvet/?hl=en",
+            "research": [
+                "Feline physiology", 
+                "Veterinary Internal Medicine (Cardiology)",
+                "improving the health and well-being of cats everywhere"
+            ],
+            "cv": [
+                {
+                    "duration": "since 2007",
+                    "institution": "Department of Clinical Sciences",
+                    "description": "Senior Research Associate"
+                },
+                {
+                    "duration": "2005",
+                    "institution": "Cornell University",
+                    "description": "Pharmacology, PhD"
+                }
+            ]
+        }
+    ],
+    "lectures": [
+        {
+            "id": "1",
+            "lectureName": "The Cat Class",
+            "imageUrl": "https://thumbs.dreamstime.com/b/school-books-desk-education-concept-educate-technology-cat-splash-business-laptop-computer-89969027.jpg",
+            "type": "Online class",
+            "institution": "University of Florida, College of Veterinary Medicine",
+            "courseInfo": {
+                "number": "VME 3002",
+                "semester": "Fall",
+                "year": 2021,
+                "credit": "3"
+            },
+            "description": "This course is designed for students interested in planning careers in Veterinary Medicine and Veterinary Technical Programs. Students that successfully complete the class will learn about a number of different topics in the feline field that will be covered in more detail in Veterinary School and Veterinary Technical Programs. These include anatomy, neuroscience, urology, endocrinology, reproduction, and various feline medical case studies and diseases. Other important topics related to the feline that will be covered in the class include shelter medicine, evolution, breeds, nutrition, and infectious disease.",
+            "objectives": [
+                "Describe some common health issues in felines",
+                "Recognize, at a basic level, healthy versus unhealthy conditions in cats",
+                "Characterize and distinguish major aspects of feline natural history, anatomy, and physiology"
+            ],
+            "source": "https://sacs.vetmed.ufl.edu/wordpress/files/2021/04/The_Cat_syllabus_VME-3002.pdf"
+        },
+        {
+            "id": "2",
+            "lectureName": "The Truth About Cats and Dogs",
+            "imageUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2022%2F05%2F20%2Fwhere-to-pet-a-cat-2000.jpg",
+            "type": "Cousera",
+            "institution": "The University of Edinburgh",
+            "courseInfo": {
+                "number": "n/a",
+                "semester": "any",
+                "year": 2022,
+                "credit": "n/a"
+            },
+            "description": "We ask whether we impose unrealistic expectations on our cats and dogs and how this affects their ability to live alongside us. We ask, what can we do to be more responsible pet owners and to ensure the welfare of all cats and dogs in society? This MOOC explores different scientifically validated methods that can help you to better understand your pet, to enrich their lives and help you to be a more educated and confident pet owner.",
+            "objectives": [
+                "Exploring the world of cats and dogs and how our relationships with them vary around the world and have changed over time",
+                "Explore the world from perspective of pets to street dogs, shelter dogs/cats and examine how their genetic make-up may influence their behavioural responses and choices",
+                "Dispeling common behavioural myths by looking through a scientific lens"
+            ],
+            "source": "https://www.coursera.org/learn/cats-and-dogs#enroll"
+        }
+
+    ]
+}
