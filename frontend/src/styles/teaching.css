@@ -1,15 +1,27 @@
 .lectures-list {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
-.lecture-record {
+.lecture-record,
+.lecture-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem;
   padding: 0.5rem;
-  gap: 1rem;
+  gap: 1.5rem;
   position: relative;
+}
+
+.lecture-info {
+  justify-content: stretch;
+}
+
+@media (max-width: 750px) {
+  .lecture-record,
+  .lecture-info {
+    flex-direction: column;
+  }
 }
 
 .lecture-record-link {
@@ -46,4 +58,36 @@
 .lecture-description {
   font-size: 0.9rem;
   color: var(--dark-grey);
+}
+
+.description {
+  text-align: left;
+  padding: 1rem;
+}
+
+.description a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--dark-blue);
+}
+
+.description a:hover {
+  font-weight: 600;
+}
+
+.course-info {
+  margin-top: 1rem;
+}
+
+.course-details {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  margin-top: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.course-details label {
+  justify-self: start;
+  color: var(--dark-blue);
+  font-weight: 600;
 }

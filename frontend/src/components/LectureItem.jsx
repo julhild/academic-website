@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
 function LectureItem({lecture}) {
   return (
     <li className='lecture-record'>

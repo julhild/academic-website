@@ -340,10 +340,10 @@
             "type": "Cousera",
             "institution": "The University of Edinburgh",
             "courseInfo": {
-                "number": "",
+                "number": "n/a",
                 "semester": "any",
                 "year": 2022,
-                "credit": ""
+                "credit": "n/a"
             },
             "description": "We ask whether we impose unrealistic expectations on our cats and dogs and how this affects their ability to live alongside us. We ask, what can we do to be more responsible pet owners and to ensure the welfare of all cats and dogs in society? This MOOC explores different scientifically validated methods that can help you to better understand your pet, to enrich their lives and help you to be a more educated and confident pet owner.",
             "objectives": [
