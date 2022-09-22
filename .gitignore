@@ -1,6 +1,4 @@
 node_modules
-frontend/node_modules
 .env
 package-lock.json
-frontend/package-lock.json
 build
