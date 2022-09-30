@@ -1,25 +1,49 @@
 import { FaGraduationCap, FaPaw } from 'react-icons/fa';
 import "../styles/group-members.css";
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getGroupMembers } from "../store/people/peopleSlice";
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
 import Spinner from '../components/Spinner';
 import GroupMember from '../components/GroupMember';
 
 
 function GroupMembers() {
-  const { groupMembers } = useSelector(state => state.groupMembers);
-
-  const dispatch = useDispatch();
+  const [groupMembers, setGroupMembers] = useState(null);
 
   useEffect(() => {
-    dispatch(getGroupMembers())
-  }, [dispatch]);
+    const fetchPeople = async () => {
+      try {
+        const peopleRef = collection(db, 'group-members');
+        const q = query(peopleRef, orderBy('name'));
+        const querySnap = await getDocs(q);
+
+        let people = [];
+
+        querySnap.forEach(doc =>
+          people.push({
+            id: doc.id,
+            data: doc.data()
+          })
+        );
+
+        setGroupMembers(people);
+      } catch (error) {
+        toast.error(error);
+      }
+    }
+
+    fetchPeople();
+  }, []);
 
   if (!groupMembers) {
     return <Spinner/>
   }
-
 
   return (
     <>
@@ -32,16 +56,16 @@ function GroupMembers() {
         <div className="member-category">
           <FaGraduationCap/> Researchers
         </div>
-        {groupMembers.filter(el => el.category === "researcher").map(person => (
-          <GroupMember  key={person.id} groupMember={person} />
+        {groupMembers.filter(el => el.data.category === "researcher").map(person => (
+          <GroupMember  key={person.id} groupMember={person.data} />
         ))}
 
         <div className="member-category">
           <FaPaw/> Remarkable Cats
         </div>
 
-        {groupMembers.filter(el => el.category === "remarkable cat").map(person => (
-          <GroupMember  key={person.id} groupMember={person} />
+        {groupMembers.filter(el => el.data.category === "remarkable cat").map(person => (
+          <GroupMember  key={person.id} groupMember={person.data} />
         ))}
         
 

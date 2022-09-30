@@ -2,40 +2,24 @@ import { Link } from 'react-router-dom';
 import { FaCat, FaCalendarMinus } from 'react-icons/fa';
 import '../styles/news.css';
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-
-
 import {
   collection,
   getDocs,
   query,
   orderBy,
   limit,
-  startAfter,
+  startAfter
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
-
-import { getNews } from "../store/news/newsSlice";
 import Spinner from '../components/Spinner';
 
 function Home() {
-  // const { news, isMoreNews } = useSelector(state => state.news);
   const [news, setNews] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
   const [lastFetched, setLastFetched] = useState(null);
 
-
-  const dispatch = useDispatch();
   // number of listings per page
-  // const perPage = 4;
-
-  // useEffect(() => {
-  //   dispatch(getNews({perPage, pageNumber}));
-  // }, [dispatch, pageNumber]);
-
-  // number of listings per page
-  const perPage = 1;
+  const perPage = 4;
 
   useEffect(() => {
     const fetchNews = async () => {

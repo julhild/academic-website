@@ -1,18 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { getResearch } from "../store/research/researchSlice";
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
 import { FaShareSquare } from 'react-icons/fa';
-import Spinner from '../components/Spinner';
 import "../styles/research.css";
+import Spinner from '../components/Spinner';
+import { toast } from 'react-toastify';
 
 function Research() {
-    const { research } = useSelector(state => state.research);
-    const dispatch = useDispatch();
+  const [research, setResearch] = useState(null);
 
     useEffect(() => {
-      dispatch(getResearch())
-    }, [dispatch]);
+      const fetchResearch = async () => {
+        try {
+        const researchRef = collection(db, 'research');
+        // create a query
+          const q = query(researchRef, orderBy('title', 'desc'));
+        // execute query
+        const querySnap = await getDocs(q);
+          let research = [];
+          
+          querySnap.forEach(doc => {
+            research.push(doc.data())
+          })
+
+          setResearch(research);
+        } catch (error) {
+                  console.log(error);
+        toast.error('Could not get publications');
+        }
+      }
+
+      fetchResearch();
+    }, []);
 
     if (!research) {
       return <Spinner/>

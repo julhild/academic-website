@@ -1,19 +1,32 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FaCopyright, FaDotCircle } from 'react-icons/fa';
-import { fetchLecture } from "../store/teaching/teachingSlice";
-import { toast } from 'react-toastify'
+import { db } from '../firebase.config';
+import { getDoc, doc } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
 
 function Lecture() {
-    const { lecture } = useSelector(state => state.lectures);
-    const dispatch = useDispatch();
+    const [lecture, setLecture] = useState(null);
     const { lectureId } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        dispatch(fetchLecture(lectureId)).unwrap().catch(toast.error);
-    }, [lectureId, dispatch]);
+        const fetchLecture = async () => {
+            try {
+                const docRef = doc(db, 'teaching', lectureId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setLecture(docSnap.data());
+                }
+            } catch (error) {
+                toast.error(error);
+            }
+        }
+
+        fetchLecture();
+    }, [lectureId, navigate]);
 
     if (!lecture) {
         return <Spinner/>
@@ -25,7 +38,7 @@ function Lecture() {
               <img src={lecture.imageUrl} alt={lecture.name} className='lecture-record-image' />
               <div className="lecture-record-details">
                   <p className="lecture-name">
-                      {lecture.lectureName}
+                      {lecture.name}
                   </p>
                   <p className='institution'>
                       {lecture.institution}

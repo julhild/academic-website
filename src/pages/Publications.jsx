@@ -1,21 +1,61 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getPublications } from "../store/publications/pubSlice";
+import { useEffect, useState } from 'react';
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
 import "../styles/publications.css";
 import { FaBookmark } from "react-icons/fa";
 import PublicationItem from '../components/PublicationItem';
 import ScrollUpButton from '../components/ScrollUpButton';
 import Spinner from '../components/Spinner';
+import { toast } from 'react-toastify';
 
 function Publications() {
-
-  const { publications } = useSelector(state => state.publications);
-
-  const dispatch = useDispatch();
+  const [publications, setPublications] = useState(null);
 
   useEffect(() => {
-    dispatch(getPublications())
-  }, [dispatch]);
+    const fetchPublications = async () => {
+      try {
+        // get a reference
+        const pubsRef = collection(db, 'publications');
+        // create a query
+        const q = query(pubsRef, orderBy('date', 'desc'));
+
+        // execute query
+        const querySnap = await getDocs(q);
+        let pubs = [];
+
+        querySnap.forEach(doc => {
+          const docYear = doc.data().year;
+          const pubYear = pubs.find(pub => pub.year === docYear);
+
+          if (pubYear) {
+            pubYear.articles.push({
+              id: doc.id,
+              data: doc.data()
+            })
+          } else {
+            pubs.push({
+              year: docYear, articles: [{
+                id: doc.id,
+                data: doc.data()
+              }]
+            })
+          }
+        })
+
+        setPublications(pubs)
+      } catch (error) {
+        console.log(error);
+        toast.error('Could not get publications');
+      }
+    }
+
+    fetchPublications();
+  }, []);
 
   if (!publications) {
     return <Spinner/>
@@ -40,7 +80,7 @@ function Publications() {
           <div key={publicationYear.year} className='publication-year'>
             <h1> <FaBookmark /> {publicationYear.year}</h1>
             {publicationYear.articles.map(article => (
-              <PublicationItem key={article.id} article={article} />
+              <PublicationItem key={article.id} article={article.data} />
             ))}
           </div>
         ))}

@@ -4,16 +4,16 @@ function LectureItem({lecture}) {
   return (
     <li className='lecture-record'>
           <Link to={`/teaching/${lecture.id}`} className='lecture-record-link'>
-              <img src={lecture.imageUrl} alt={lecture.name} className='lecture-record-image' />
+              <img src={lecture.data.imageUrl} alt={lecture.data.name} className='lecture-record-image' />
               <div className="lecture-record-details">
                   <p className="lecture-name">
-                      {lecture.lectureName}
+                      {lecture.data.name}
                   </p>
                   <p className='institution'>
-                      {lecture.institution}
+                      {lecture.data.institution}
                   </p>
                   <p className="lecture-description">
-                      {lecture.description}
+                      {lecture.data.description}
                   </p>
               </div>
           </Link>

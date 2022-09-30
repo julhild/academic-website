@@ -219,7 +219,7 @@
             "location": "Unity College",
             "website": "https://maueyes.com",
             "instagram": "https://www.instagram.com/maueyes/?hl=en",
-            "linkin": "https://www.linkedin.com/in/kristynvitale/",
+            "linkedin": "https://www.linkedin.com/in/kristynvitale/",
             "youtube": "https://www.youtube.com/c/catscipodcast",
             "researchGate": "https://www.researchgate.net/profile/Kristyn-Vitale",
             "research": [
@@ -246,7 +246,7 @@
             "location": "10 Downing Street",
             "wikipedia": "https://en.wikipedia.org/wiki/Chief_Mouser_to_the_Cabinet_Office",
             "website": "https://www.gov.uk/government/history/10-downing-street#larry-chief-mouser",
-            "linkin": "https://www.linkedin.com/in/larry-the-cat-a105202b/?originalSubdomain=uk",
+            "linkedin": "https://www.linkedin.com/in/larry-the-cat-a105202b/?originalSubdomain=uk",
             "twitter": "https://twitter.com/Number10cat",
             "instagram": "https://www.instagram.com/larrythecatatnumber10/?hl=en",
             "research": [
@@ -290,13 +290,13 @@
             "name": "Dr. Bruce Kornreich",
             "location": "Feline Health Center",
             "website": "https://www.vet.cornell.edu/research/faculty/bruce-kornreich-dvm-phd",
-            "linkin": "https://www.linkedin.com/in/bruce-kornreich-494a6b79",
+            "linkedin": "https://www.linkedin.com/in/bruce-kornreich-494a6b79",
             "researchGate": "https://www.researchgate.net/profile/Bruce-Kornreich",
             "instagram": "https://www.instagram.com/cornellvet/?hl=en",
             "research": [
                 "Feline physiology", 
                 "Veterinary Internal Medicine (Cardiology)",
-                "improving the health and well-being of cats everywhere"
+                "Improving the health and well-being of cats everywhere"
             ],
             "cv": [
                 {
@@ -315,7 +315,7 @@
     "lectures": [
         {
             "id": "1",
-            "lectureName": "The Cat Class",
+            "name": "The Cat Class",
             "imageUrl": "https://thumbs.dreamstime.com/b/school-books-desk-education-concept-educate-technology-cat-splash-business-laptop-computer-89969027.jpg",
             "type": "Online class",
             "institution": "University of Florida, College of Veterinary Medicine",
@@ -335,7 +335,7 @@
         },
         {
             "id": "2",
-            "lectureName": "The Truth About Cats and Dogs",
+            "name": "The Truth About Cats and Dogs",
             "imageUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2022%2F05%2F20%2Fwhere-to-pet-a-cat-2000.jpg",
             "type": "Cousera",
             "institution": "The University of Edinburgh",
