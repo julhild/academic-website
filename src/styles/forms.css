@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 300px;
+  gap: 0.5rem;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px grey solid;
+  line-height: 1.5;
+}
+
+.form-label {
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: block;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--green);
+  background: transparent;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+}

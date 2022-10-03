@@ -95,9 +95,11 @@ function Home() {
     return date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ', ' + date.getFullYear();
   }
 
-      function closeModal() {
-        setIsOpen(false);
-    }
+  const closeModal = () => { setIsOpen(false) };
+
+  const addNews = () => {
+
+  }
 
   if (!news) {
     return <Spinner/>
@@ -116,8 +118,11 @@ function Home() {
         </div>
       </div>
 
-      Add a new record <button onClick={() => setIsOpen(!isModalOpen)}><FaPlusCircle/></button>
-      <NewsModal isOpen={isModalOpen} closeModal={closeModal} />
+      <span className="add-modal">
+        <h4>Add another news</h4> <FaPlusCircle onClick={() => setIsOpen(true)}/>
+      </span>
+      <NewsModal isOpen={isModalOpen} closeModal={closeModal} onSubmit={addNews} />
+
       <div className="news-grid">
         {news.map(newsItem => (
           <div key={newsItem.id} className="news-item">

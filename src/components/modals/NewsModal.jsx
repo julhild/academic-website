@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import Modal from 'react-modal';
+import "../../styles/forms.css";
+import { FaTimes } from 'react-icons/fa';
 
 const customStyles = {
   content: {
@@ -9,45 +11,42 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
+    background: 'var(--light-blue-background)',
+    padding: '2rem',
     transform: 'translate(-50%, -50%)',
+    border: '',
+    borderBottom: 'solid var(--green) 2px',
+    borderRadius: '10px',
+    color: 'var(--green)'
   },
 };
 
 Modal.setAppElement('#root');
 
-function NewsModal({isOpen, closeModal}) {
-    const [modalIsOpen, setIsOpen] = useState(false);
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-    }
-
-
+function NewsModal({isOpen, closeModal, onSubmit}) {
 
     return (
         <div>
-           
             <Modal
                 isOpen={isOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Add a another news"
             >
-                <h2>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                    <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
+
+                <button className="close-modal" onClick={closeModal}><FaTimes/></button>
+
+                <div className="page-header">
+                    <h2>Add news</h2>                  
+                </div>
+                <form>
+                    <label className="form-label">Title</label>
+                    <input type="text" />
+
+
+                    <div className="page-header">
+                        <button className="btn" type="submit">Submit</button>
+                    </div>
                 </form>
             </Modal>
         </div>
