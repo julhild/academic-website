@@ -4,7 +4,7 @@ import { FaCopyright, FaDotCircle } from 'react-icons/fa';
 import { db } from '../firebase.config';
 import { getDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/utils/Spinner';
 
 function Lecture() {
     const [lecture, setLecture] = useState(null);

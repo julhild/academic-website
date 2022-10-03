@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaCat, FaCalendarMinus } from 'react-icons/fa';
+import { FaCat, FaCalendarMinus, FaPlusCircle } from 'react-icons/fa';
 import '../styles/news.css';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -12,11 +12,13 @@ import {
   startAfter
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/utils/Spinner';
+import NewsModal from "../components/modals/NewsModal"
 
 function Home() {
   const [news, setNews] = useState(null);
   const [lastFetched, setLastFetched] = useState(null);
+  const [isModalOpen, setIsOpen] = useState(false);
 
   // number of listings per page
   const perPage = 4;
@@ -26,10 +28,8 @@ function Home() {
       try {
         // get a reference
         const newsRef = collection(db, 'news');
-
         // create a query
         const q = query(newsRef, orderBy('date', 'desc'), limit(perPage + 1));
-
         // execute query
         const querySnap = await getDocs(q);
         setLastFetched(querySnap.docs[perPage] ? querySnap.docs[querySnap.docs.length - 2] : null);
@@ -88,12 +88,16 @@ function Home() {
     } catch (error) {
         toast.error('Could not fetch more news');
       }
-    }
+  }
 
   const getDate = (timestamp) => {
     const date = new Date(timestamp.seconds * 1000);
     return date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ', ' + date.getFullYear();
   }
+
+      function closeModal() {
+        setIsOpen(false);
+    }
 
   if (!news) {
     return <Spinner/>
@@ -112,6 +116,8 @@ function Home() {
         </div>
       </div>
 
+      Add a new record <button onClick={() => setIsOpen(!isModalOpen)}><FaPlusCircle/></button>
+      <NewsModal isOpen={isModalOpen} closeModal={closeModal} />
       <div className="news-grid">
         {news.map(newsItem => (
           <div key={newsItem.id} className="news-item">

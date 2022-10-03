@@ -9,8 +9,8 @@ import {
   orderBy
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import Spinner from '../components/Spinner';
-import GroupMember from '../components/GroupMember';
+import Spinner from '../components/utils/Spinner';
+import GroupMember from '../components/single-items/GroupMember';
 
 
 function GroupMembers() {

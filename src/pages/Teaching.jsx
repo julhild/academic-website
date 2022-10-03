@@ -8,8 +8,8 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import "../styles/teaching.css";
-import LectureItem from "../components/LectureItem";
-import Spinner from '../components/Spinner';
+import LectureItem from "../components/single-items/LectureItem";
+import Spinner from '../components/utils/Spinner';
 
 function Teaching() {
   const [lectures, setLectures] = useState(null);

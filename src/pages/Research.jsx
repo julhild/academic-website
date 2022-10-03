@@ -9,7 +9,7 @@ import {
 import { db } from '../firebase.config';
 import { FaShareSquare } from 'react-icons/fa';
 import "../styles/research.css";
-import Spinner from '../components/Spinner';
+import Spinner from '../components/utils/Spinner';
 import { toast } from 'react-toastify';
 
 function Research() {

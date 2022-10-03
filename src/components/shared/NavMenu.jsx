@@ -7,7 +7,7 @@ import {
   query,
   orderBy
 } from 'firebase/firestore';
-import { db } from '../firebase.config';
+import { db } from '../../firebase.config';
 
 function NavMenu() {
     const [courses, setCourses] = useState(null);

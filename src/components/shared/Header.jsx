@@ -1,6 +1,6 @@
 import { FaCat } from 'react-icons/fa';
 import NavMenu from './NavMenu';
-import "../styles/header.css";
+import "../../styles/header.css";
 
 
 function Header() {                       

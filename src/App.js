@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "./components/Header";
+import Header from "./components/shared/Header";
 import Home from "./pages/Home";
 import Research from "./pages/Research";
 import Publications from "./pages/Publications";
@@ -9,7 +9,7 @@ import Teaching from "./pages/Teaching";
 import Contact from "./pages/Contact";
 import Lecture from "./pages/Lecture";
 import GroupMembers from "./pages/GroupMembers";
-import Footer from "./components/Footer";
+import Footer from "./components/shared/Footer";
 
 function App() {
   return (

@@ -8,9 +8,9 @@ import {
 import { db } from '../firebase.config';
 import "../styles/publications.css";
 import { FaBookmark } from "react-icons/fa";
-import PublicationItem from '../components/PublicationItem';
-import ScrollUpButton from '../components/ScrollUpButton';
-import Spinner from '../components/Spinner';
+import PublicationItem from '../components/single-items/PublicationItem';
+import ScrollUpButton from '../components/utils/ScrollUpButton';
+import Spinner from '../components/utils/Spinner';
 import { toast } from 'react-toastify';
 
 function Publications() {
@@ -23,7 +23,6 @@ function Publications() {
         const pubsRef = collection(db, 'publications');
         // create a query
         const q = query(pubsRef, orderBy('date', 'desc'));
-
         // execute query
         const querySnap = await getDocs(q);
         let pubs = [];
