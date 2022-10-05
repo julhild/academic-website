@@ -136,11 +136,21 @@ function Home() {
                         <img src={newsItem.data.imageUrl} alt={newsItem.data.title} />
                       </div>         
                   }
+              
+                  {
+                    newsItem.data.tags &&
+                          <div className='categories'>
+                            {newsItem.data.tags.map((tag, index) => (
+                              <div key={index} className="category">{tag}</div>
+                            ))
+                            }
+                         </div>
+                  }
                   <p>
                     {newsItem.data.content}
                   </p>
-              </div>
-
+            </div>
+            
               {newsItem.data.links &&
                 <div className='categories'>
                   {newsItem.data.links.map((link, index) => (

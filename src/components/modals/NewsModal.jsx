@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
+import { useForm, useFieldArray } from "react-hook-form";
 import Modal from 'react-modal';
 import "../../styles/forms.css";
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaPlusCircle } from 'react-icons/fa';
 
 const customStyles = {
   content: {
@@ -23,7 +23,35 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-function NewsModal({isOpen, closeModal, onSubmit}) {
+function NewsModal({ isOpen, closeModal, onSubmit }) {
+    const { register, control, handleSubmit, formState: { errors }} = useForm({
+        defaultValues: {
+            title: '',
+            content: '',
+            imageUrl: '',
+            tags: ['Tag #1'],
+            links: [{
+                title: '',
+                url: ''
+            }],
+            date: new Date().toLocaleDateString('en-US')
+        }
+    });
+
+    const { fields: tagInputs, append: appendTag } = useFieldArray({
+            control,
+            name: "tags"
+    });
+
+    const { fields: linkInputs, append: appendLink } = useFieldArray({
+    control,
+    name: "links"
+    });
+
+    const validateInput = (data) => {
+        console.log(data);
+        onSubmit();
+    }
 
     return (
         <div>
@@ -33,20 +61,56 @@ function NewsModal({isOpen, closeModal, onSubmit}) {
                 style={customStyles}
                 contentLabel="Add a another news"
             >
-
                 <button className="close-modal" onClick={closeModal}><FaTimes/></button>
 
                 <div className="page-header">
                     <h2>Add news</h2>                  
                 </div>
-                <form>
-                    <label className="form-label">Title</label>
-                    <input type="text" />
+                <form onSubmit={handleSubmit(validateInput)}>
+                    <label className="form-label">
+                        Title
+                    </label>
+                    <input type="text" placeholder="Title of the news record" {...register('title', {required: true})}/>
+                    
+                    <label className="form-label">
+                        Date (MM/DD/YYYY)
+                    </label>
+                    <input {...register('date')} placeholder='MM/DD/YYY' />
+                    
 
+                    <label className="form-label">
+                        Tags
+                    </label>
+                    
+                    {
+                        tagInputs.map((tag, index) => (
+                            <div key={index}>
+                                <input {...register(`tags.${index}`)} />
+                            </div>
+                        ))
+                    }
 
+                    <FaPlusCircle onClick={() => appendTag('Tag #' + Number(tagInputs.length + 1))} />
+
+                    <label className="form-label">
+                        Links
+                    </label>
+                    
+                    {
+                        linkInputs.map((tag, index) => (
+                            <div key={index}>
+                                <input {...register(`links.${index}.title`)} />
+                                <input {...register(`links.${index}.url`)} />
+                            </div>
+                        ))
+                    }
+
+                    <FaPlusCircle onClick={() => appendLink({title: 'Link title', url: 'Link url'})} />
+                    
                     <div className="page-header">
                         <button className="btn" type="submit">Submit</button>
                     </div>
+
                 </form>
             </Modal>
         </div>

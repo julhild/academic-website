@@ -1,4 +1,4 @@
-import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaCaretRight, FaEnvelope, FaUsers } from 'react-icons/fa';
+import { FaNewspaper, FaMicroscope, FaHouseUser, FaBook, FaEnvelope, FaUsers } from 'react-icons/fa';
 import NavLink from './NavLink';
 import { useEffect, useState } from 'react';
 import {
@@ -54,20 +54,20 @@ function NavMenu() {
 
             <li className='navbar-item has-dropdown'>
                 <NavLink link={'/teaching'} name={'Teaching'} icon={<FaBook />}></NavLink>
-                <ul className="dropdown">
+                {/* <ul className="dropdown"> */}
                     {/* <li className="navbar-item dropdown-item">
                         <NavLink link={'/teaching'} name={'Summer 2022'} icon={<FaCaretRight />}></NavLink>
                     </li>
                     <li className="navbar-item dropdown-item">
                         <NavLink link={'/teaching'} name={'Winter 2021'} icon={<FaCaretRight />}></NavLink>
                     </li> */}
-
+{/* 
                     {courses && courses.map((lecture) => (
                         <li key={lecture.id} className="navbar-item dropdown-item">
                         <NavLink link={'/teaching/' + lecture.id} name={lecture.data.name} icon={<FaCaretRight />}></NavLink>
                     </li>
-                    ))}
-                </ul>
+                    ))} */}
+                {/* </ul> */}
             </li>
 
             <li className='navbar-item'>
