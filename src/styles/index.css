@@ -8,6 +8,7 @@
   --dark-blue: #1d6695;
   --dark-grey: #333;
   --light-blue-background: #e5f2fa;
+  --red: #a74528;
 
   --header-height: 70px;
   --footer-height: 85px;
@@ -45,6 +46,10 @@ p {
   margin: 0;
 }
 
+.red {
+  color: var(--red);
+}
+
 .link {
   color: var(--dark-grey);
   text-decoration: none;
@@ -70,6 +75,13 @@ p {
   flex-direction: column;
   justify-content: center;
   margin: 1rem auto 2rem auto;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .page-header {

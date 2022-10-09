@@ -51,7 +51,7 @@ function Home() {
     }
 
     fetchNews()
-  }, []);
+  }, [isModalOpen]);
 
   const onFetchMoreNews = async () => {
     try {
@@ -97,10 +97,6 @@ function Home() {
 
   const closeModal = () => { setIsOpen(false) };
 
-  const addNews = () => {
-
-  }
-
   if (!news) {
     return <Spinner/>
   }
@@ -121,7 +117,7 @@ function Home() {
       <span className="add-modal">
         <h4>Add another news</h4> <FaPlusCircle onClick={() => setIsOpen(true)}/>
       </span>
-      <NewsModal isOpen={isModalOpen} closeModal={closeModal} onSubmit={addNews} />
+      <NewsModal isOpen={isModalOpen} closeModal={closeModal}/>
 
       <div className="news-grid">
         {news.map(newsItem => (
@@ -138,7 +134,7 @@ function Home() {
                   }
               
                   {
-                    newsItem.data.tags &&
+                    newsItem.data.tags && newsItem.data.tags.length > 0 &&
                           <div className='categories'>
                             {newsItem.data.tags.map((tag, index) => (
                               <div key={index} className="category">{tag}</div>
@@ -151,7 +147,7 @@ function Home() {
                   </p>
             </div>
             
-              {newsItem.data.links &&
+              {newsItem.data.links && newsItem.data.links.length > 0 &&
                 <div className='categories'>
                   {newsItem.data.links.map((link, index) => (
                       <div key={index}>

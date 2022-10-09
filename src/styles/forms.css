@@ -2,7 +2,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-width: 300px;
   gap: 0.5rem;
 }
 
@@ -14,9 +13,33 @@ textarea {
   padding: 0.25rem;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.add-button {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #fff;
+  color: var(--dark-blue);
+  border-radius: 5px;
+  border: var(--dark-blue) 1px solid;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.add-icon {
+  font-size: 1rem;
+  vertical-align: -20%;
+  margin-right: 0.25rem;
+}
+
 .form-label {
   font-weight: 600;
-  /* text-transform: uppercase; */
   font-size: 0.8rem;
   margin-top: 0.25rem;
   display: block;
@@ -35,4 +58,29 @@ textarea {
   border: 0;
   box-shadow: 0;
   cursor: pointer;
+}
+
+.tag-input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+}
+
+.link-input {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+}
+
+.tag-input-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
