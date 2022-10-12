@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { FaCat, FaCalendarMinus, FaPlusCircle } from 'react-icons/fa';
+import { FaCat, FaPlusCircle } from 'react-icons/fa';
 import '../styles/news.css';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -13,7 +12,8 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import Spinner from '../components/utils/Spinner';
-import NewsModal from "../components/modals/NewsModal"
+import AddNewsModal from "../components/modals/AddNewsModal";
+import NewsItem from '../components/single-items/NewsItem';
 
 function Home() {
   const [news, setNews] = useState(null);
@@ -22,6 +22,13 @@ function Home() {
 
   // number of listings per page
   const perPage = 4;
+
+  const onPostDelete = (postId) => {
+    const updatedPosts = news.filter(post => post.id !== postId);
+    setNews(updatedPosts);
+
+    toast.success('The post was deleted');
+  }
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -90,11 +97,6 @@ function Home() {
       }
   }
 
-  const getDate = (timestamp) => {
-    const date = new Date(timestamp.seconds * 1000);
-    return date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ', ' + date.getFullYear();
-  }
-
   const closeModal = () => { setIsOpen(false) };
 
   if (!news) {
@@ -117,53 +119,11 @@ function Home() {
       <span className="add-modal">
         <h4>Add another news</h4> <FaPlusCircle onClick={() => setIsOpen(true)}/>
       </span>
-      <NewsModal isOpen={isModalOpen} closeModal={closeModal}/>
+      <AddNewsModal isOpen={isModalOpen} closeModal={closeModal}/>
 
       <div className="news-grid">
         {news.map(newsItem => (
-          <div key={newsItem.id} className="news-item">
-              <div>
-                  <h4>{newsItem.data.title}</h4>
-                  <p className='news-date'> <FaCalendarMinus/> {getDate(newsItem.data.date)}</p>
-                
-                  {
-                    newsItem.data.imageUrl && 
-                      <div> 
-                        <img src={newsItem.data.imageUrl} alt={newsItem.data.title} />
-                      </div>         
-                  }
-              
-                  {
-                    newsItem.data.tags && newsItem.data.tags.length > 0 &&
-                          <div className='categories'>
-                            {newsItem.data.tags.map((tag, index) => (
-                              <div key={index} className="category">{tag}</div>
-                            ))
-                            }
-                         </div>
-                  }
-                  <p>
-                    {newsItem.data.content}
-                  </p>
-            </div>
-            
-              {newsItem.data.links && newsItem.data.links.length > 0 &&
-                <div className='categories'>
-                  {newsItem.data.links.map((link, index) => (
-                      <div key={index}>
-                        <Link
-                          to=''
-                          className='news-link'
-                          onClick={() => window.open(`${link.url}`)}
-                        >
-                          {link.title}
-                        </Link>
-                      <div className='separator'>{ index + 1 < newsItem.data.links.length ? '|' : '' }</div>
-                      </div>
-                  ))}
-                </div>
-              }
-            </div>
+          <NewsItem key={newsItem.id} newsItem={newsItem} onPostDelete={onPostDelete} />
           ))}
       </div>
 
