@@ -71,8 +71,8 @@ textarea {
 .link-input {
   display: flex;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  grid-template-columns: 2fr 3fr 1fr;
+  justify-items: stretch;
   align-content: center;
   gap: 0.5rem;
 }

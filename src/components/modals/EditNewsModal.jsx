@@ -10,8 +10,9 @@ import { customStyles, defaultNewsFormValues, newsDataToSubmit, validateNewsForm
 
 Modal.setAppElement('#root');
 
-function AddNewsModal({ newsId, isOpen, closeModal }) {
-    const { register, control, reset, handleSubmit } = useForm({ defaultValues: defaultNewsFormValues});
+function EditNewsModal({ newsId, isOpen, onEdit, closeModal }) {
+    const { register, control, reset, handleSubmit, setValue: setFormValue } =
+        useForm({ defaultValues: defaultNewsFormValues });
     const { fields: tagInputs, append: appendTag, remove: removeTag, swap: swapTags } = useFieldArray({
             control,
             name: "tags"
@@ -22,8 +23,22 @@ function AddNewsModal({ newsId, isOpen, closeModal }) {
         name: "links"
     });
 
+    const getDate = (timestamp) => {
+        const date = new Date(timestamp.seconds * 1000);
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    }
+
     // news post to edit
     useEffect(() => {
+        const fillForm = (data) => {
+            setFormValue('title',  data.title);
+            setFormValue('date',  getDate(data.date) );
+            setFormValue('content',  data.content);
+            setFormValue('imageUrl',  data.imageUrl);
+            setFormValue('tags',  data.tags);
+            setFormValue('links',  data.links);
+        };
+
         const fetchPost = async () => {
             const docRef = doc(db, 'news', newsId);
             const docSnap = await getDoc(docRef);
@@ -31,16 +46,15 @@ function AddNewsModal({ newsId, isOpen, closeModal }) {
             if (docSnap.exists()) {
                 // needed if the user is logged in or not
                 // setNewsPost(docSnap.data());
-                // setFormData({ ...docSnap.data(), address: docSnap.data().location});
+                fillForm(docSnap.data());
             } else {
-                // navigate('/');
-                // closeModal();
+                closeModal();
                 toast.error('Listing does not exists');
             }
         }
 
         fetchPost();
-    }, [newsId, isOpen])
+    }, [newsId, closeModal, setFormValue])
 
     const moveTagUp = (index) => {
         swapTags(index, index - 1);
@@ -58,8 +72,6 @@ function AddNewsModal({ newsId, isOpen, closeModal }) {
         swapLinks(index, index + 1);
     }
 
-
-
     const updatePost = async (data) => {
         const errorMessage = validateNewsFormInput(data);
 
@@ -70,16 +82,15 @@ function AddNewsModal({ newsId, isOpen, closeModal }) {
                 const dataToSubmit = newsDataToSubmit(data);
 
                 // update news post
-                const docRef = doc(db, 'listings', newsId);
+                const docRef = doc(db, 'news', newsId);
                 await updateDoc(docRef, dataToSubmit);
-                toast.success(`New post was saved.`);
+                onEdit({ id: newsId, data: dataToSubmit })
                 onModalClose();
             } catch (error) {
                 console.log(error);
                 toast.error('Could not update the news post.');
             }
         }
-        
     }
 
     const onModalClose = () => {
@@ -92,118 +103,116 @@ function AddNewsModal({ newsId, isOpen, closeModal }) {
     }
 
     return (
-        <div>
-            <Modal
-                isOpen={isOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Add a another news"
-            >
-                <button className="close-modal" onClick={onModalClose}><FaTimes/></button>
+        <Modal
+            isOpen={isOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Add a another news"
+        >
+            <button className="close-modal" onClick={onModalClose}><FaTimes/></button>
 
-                <div className="page-header">
-                    <h2>Add news</h2>                  
-                </div>
-                <form onSubmit={handleSubmit(updatePost)}>
-                    <label className="form-label">
-                        Title
-                    </label>
-                    <input type="text" placeholder="Title of the news record" {...register('title')}/>
-                    
-                    <label className="form-label">
-                        Date (MM/DD/YYYY)
-                    </label>
-                    <input {...register('date')} placeholder='MM/DD/YYY' />
+            <div className="page-header">
+                <h2>Edit news post</h2>                  
+            </div>
+            <form onSubmit={handleSubmit(updatePost)}>
+                <label className="form-label">
+                    Title
+                </label>
+                <input type="text" placeholder="Title of the news record" {...register('title')}/>
+                
+                <label className="form-label">
+                    Date (MM/DD/YYYY)
+                </label>
+                <input {...register('date')} placeholder='MM/DD/YYY' />
 
-                    <label className="form-label">
-                        Content
-                    </label>
-                    <textarea type="text" placeholder="What is it about" {...register('content')} />
-                    
+                <label className="form-label">
+                    Content
+                </label>
+                <textarea type="text" placeholder="What is it about" {...register('content')} />
+                
 
-                    <label className="form-label">
-                        Image URL
-                    </label>
-                    <input type="text" placeholder="Link a picture to this news record (optional)" {...register('imageUrl')}/>
-                    
+                <label className="form-label">
+                    Image URL
+                </label>
+                <input type="text" placeholder="Link a picture to this news record (optional)" {...register('imageUrl')}/>
+                
 
-                    <label className="form-label">
-                        Tags
-                    </label>
-                                   
-                        {
-                            tagInputs.map((tag, index) => (
-                                <div className="tag-input" key={tag.id}>
-                                    <input type="text" placeholder="News Tag" {...register(`tags.${index}`)} />
-
-                                    <div className="control-buttons">    
-                                        {tagInputs.length > 1 &&         
-                                            <>
-                                                {
-                                                    index > 0 &&
-                                                    <FaArrowAltCircleUp className='dark-blue pointer' onClick={() => moveTagUp(index)} />
-                                                }
-                                                {
-                                                    index < tagInputs.length - 1 &&
-                                                    <FaArrowAltCircleDown className='dark-blue pointer' onClick={() => moveTagDown(index)}/>
-                                                }
-                                            </>    
-                                        }
-                                        <FaTrashAlt className='red pointer' onClick={() => removeTag(index)} />                                    
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    <div className='flex-row'>
-                        <button type="button" className="add-button pointer" onClick={() => appendTag('Another Tag')}>
-                            <FaPlusCircle className='add-icon'/> Add Tag
-                        </button>        
-                    </div>
-
-                    <label className="form-label">
-                        Links
-                    </label>
-                    
+                <label className="form-label">
+                    Tags
+                </label>
+                                
                     {
-                        linkInputs.map((link, index) => (
-                            <div className="link-input" key={link.id}>
-                                <input type="text" placeholder="Title of the link" {...register(`links.${index}.title`)} />
-                                <input type="text" placeholder="Link address" {...register(`links.${index}.url`)} />
+                        tagInputs.map((tag, index) => (
+                            <div className="tag-input" key={tag.id}>
+                                <input type="text" placeholder="News Tag" {...register(`tags.${index}`)} />
 
-                                 <div className="control-buttons">    
-                                        {linkInputs.length > 1 &&         
-                                            <>
-                                                {
-                                                    index > 0 &&
-                                                    <FaArrowAltCircleUp className='dark-blue pointer' onClick={() => moveLinkUp(index)} />
-                                                }
-                                                {
-                                                    index < linkInputs.length - 1 &&
-                                                    <FaArrowAltCircleDown className='dark-blue pointer' onClick={() => moveLinkDown(index)}/>
-                                                }
-                                            </>    
-                                        }
-                                        <FaTrashAlt className='red pointer' onClick={() => removeLink(index)} />                                    
-                                    </div>
+                                <div className="control-buttons">    
+                                    {tagInputs.length > 1 &&         
+                                        <>
+                                            {
+                                                index > 0 &&
+                                                <FaArrowAltCircleUp className='dark-blue pointer' onClick={() => moveTagUp(index)} />
+                                            }
+                                            {
+                                                index < tagInputs.length - 1 &&
+                                                <FaArrowAltCircleDown className='dark-blue pointer' onClick={() => moveTagDown(index)}/>
+                                            }
+                                        </>    
+                                    }
+                                    <FaTrashAlt className='red pointer' onClick={() => removeTag(index)} />                                    
+                                </div>
                             </div>
                         ))
                     }
+                <div className='flex-row'>
+                    <button type="button" className="add-button pointer" onClick={() => appendTag('Another Tag')}>
+                        <FaPlusCircle className='add-icon'/> Add Tag
+                    </button>        
+                </div>
 
-                    <div className='flex-row'>
-                        <button type="button" className="add-button pointer" onClick={() => appendLink({title: '', url: ''})}>
-                            <FaPlusCircle className='add-icon'/> Add Link
-                        </button>        
-                    </div>
-                    
-                    <div className="page-header">
-                        <button className="btn" type="submit">Submit</button>
-                    </div>
+                <label className="form-label">
+                    Links
+                </label>
+                
+                {
+                    linkInputs.map((link, index) => (
+                        <div className="link-input" key={link.id}>
+                            <input type="text" placeholder="Title of the link" {...register(`links.${index}.title`)} />
+                            <input type="text" placeholder="Link address" {...register(`links.${index}.url`)} />
 
-                </form>
-            </Modal>
-        </div>
-  )
+                                <div className="control-buttons">    
+                                    {linkInputs.length > 1 &&         
+                                        <>
+                                            {
+                                                index > 0 &&
+                                                <FaArrowAltCircleUp className='dark-blue pointer' onClick={() => moveLinkUp(index)} />
+                                            }
+                                            {
+                                                index < linkInputs.length - 1 &&
+                                                <FaArrowAltCircleDown className='dark-blue pointer' onClick={() => moveLinkDown(index)}/>
+                                            }
+                                        </>    
+                                    }
+                                    <FaTrashAlt className='red pointer' onClick={() => removeLink(index)} />                                    
+                                </div>
+                        </div>
+                    ))
+                }
+
+                <div className='flex-row'>
+                    <button type="button" className="add-button pointer" onClick={() => appendLink({title: '', url: ''})}>
+                        <FaPlusCircle className='add-icon'/> Add Link
+                    </button>        
+                </div>
+                
+                <div className="page-header">
+                    <button className="btn" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </Modal>
+)
 }
 
-export default AddNewsModal
+export default EditNewsModal

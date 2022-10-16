@@ -78,7 +78,11 @@ export const newsDataToSubmit = (data) => {
   const linksToSubmit = [];
 
   data.tags.forEach((tag) => {
-    if (tag.trim() !== "" && tag.trim() !== "News Tag") {
+    if (
+      tag.trim() !== "" &&
+      tag.trim() !== "News Tag" &&
+      tag.trim() !== "Another Tag"
+    ) {
       tagsToSubmit.push(tag);
     }
   });

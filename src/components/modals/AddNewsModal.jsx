@@ -4,9 +4,9 @@ import Modal from 'react-modal';
 import "../../styles/forms.css";
 import { FaTimes, FaPlusCircle, FaArrowAltCircleUp, FaArrowAltCircleDown, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { Timestamp, addDoc, collection} from 'firebase/firestore';
+import { addDoc, collection} from 'firebase/firestore';
 import { db } from '../../firebase.config';
-import { customStyles, defaultNewsFormValues } from "./news-modul-shared";
+import { customStyles, defaultNewsFormValues, newsDataToSubmit, validateNewsFormInput } from "./news-modul-shared";
 
 Modal.setAppElement('#root');
 
@@ -38,73 +38,22 @@ function AddNewsModal({ isOpen, closeModal }) {
         swapLinks(index, index + 1);
     }
 
-    const getTimestamp = (inputDate) => {
-        const [month, day, year] = inputDate.split('/');
-        return Timestamp.fromDate(new Date(year, month - 1, day));
-    }
-
-    const validateInput = (data) => {
-        const isLinkIncomplete = (links) => {
-            let isIncomplete = false;
-            links.forEach(link => {
-                if (link.title.trim() === '' && link.url.trim() !== '') {
-                    isIncomplete = true;
-                }
-
-                if (link.title.trim() !== '' && link.url.trim() === '') {
-                    isIncomplete = true;
-                }
-            })
-
-            return isIncomplete;
-        }
-
-        if (data.title.trim() === '') {
-            toast.error("Please add a title to the post.")
-        } else if (data.content.trim() === '') {
-            toast.error("Please add the content.")
-        } else if (data.date.trim() === '') {
-            toast.error("Please add the date of the post.");
-        } else if (isNaN(getTimestamp(data.date).seconds)) {
-            toast.error('Invalid date');
-        } else if (isLinkIncomplete(data.links)) {
-            toast.error("Every link should have both: a title and the address.");
-        } else {
-            submitPost(data);
-        }
-    }
-
     const submitPost = async (data) => {
-        
-        const tagsToSubmit = [];
-        const linksToSubmit = [];
-        
-        data.tags.forEach(tag => {
-            if (tag.trim() !== '' && tag.trim() !== 'News Tag') {
-                tagsToSubmit.push(tag);
-            }
-        });
-        
-        data.links.forEach(link => {
-            if (link.title.trim() !== '' && link.url.trim() !== '') {
-                linksToSubmit.push(link);
-            }
-        });
+        const errorMessage = validateNewsFormInput(data);
 
-        const dataToSubmit = {
-            ...data,
-            date: getTimestamp(data.date),
-            tags: tagsToSubmit,
-            links: linksToSubmit
-        };
+        if (errorMessage) {
+            toast.error(errorMessage);
+        } else {
+            try {
+            const dataToSubmit = newsDataToSubmit(data);
 
-        try {
-            await addDoc(collection(db, 'news'), dataToSubmit);
-            toast.success(`New post was succesfully added.`);
-            onModalClose();
-        } catch (error) {
-            console.log(error);
-            toast.error('Could not add a new post.');
+                await addDoc(collection(db, 'news'), dataToSubmit);
+                toast.success(`New post was successfully added.`);
+                onModalClose();
+            } catch (error) {
+                console.log(error);
+                toast.error('Could not add a new post.');
+            }
         }
     }
 
@@ -131,7 +80,7 @@ function AddNewsModal({ isOpen, closeModal }) {
                 <div className="page-header">
                     <h2>Add news post</h2>                  
                 </div>
-                <form onSubmit={handleSubmit(validateInput)}>
+                <form onSubmit={handleSubmit(submitPost)}>
                     <label className="form-label">
                         Title
                     </label>

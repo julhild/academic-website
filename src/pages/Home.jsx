@@ -23,6 +23,20 @@ function Home() {
   // number of listings per page
   const perPage = 4;
 
+  const onPostEdit = (newsPost) => {
+    news.forEach(post => {
+      if (post.id === newsPost.id) {
+        post.data = newsPost.data;
+      }
+    })
+
+    setNews(news);
+    // const updatedPosts = news.filter(post => post.id !== postId);
+    // setNews(updatedPosts);
+
+    toast.success(`New post was saved.`);
+  }
+
   const onPostDelete = (postId) => {
     const updatedPosts = news.filter(post => post.id !== postId);
     setNews(updatedPosts);
@@ -123,7 +137,7 @@ function Home() {
 
       <div className="news-grid">
         {news.map(newsItem => (
-          <NewsItem key={newsItem.id} newsItem={newsItem} onPostDelete={onPostDelete} />
+          <NewsItem key={newsItem.id} newsItem={newsItem} onPostEdit={onPostEdit} onPostDelete={onPostDelete} />
           ))}
       </div>
 
